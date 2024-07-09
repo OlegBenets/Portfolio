@@ -1,1 +1,13 @@
-<p>my-skills works!</p>
+<div class="my-skills-container">
+    <div class="skills-icons-container">
+        <div *ngFor="let skill of skills">
+            <img [src]="skill.img" [alt]="skill.name">
+            <span>{{skill.name}}</span>
+        </div>
+    </div>
+    <div class="description-my-skills">
+        <h2>My skills</h2>
+        <span>I have gained experience in building projects with various front end technologies and concepts.</span>
+        <button>Get in touch</button>
+    </div>
+</div>

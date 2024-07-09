@@ -3,6 +3,23 @@ body {
     font-family: 'Poppins';
 }
 
+@mixin dFlex($jc: center, $ai: center, $g: 0) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
+}
+
+@mixin position($p: absolute, $t: 0, $l: 0) {
+  position: $p;
+  top: $t;
+  left: $l;
+}
+
+$green: #70e61c;
+$violet: #9747ff;
+$dark_blue: #141d2f;
+
 
 /* poppins-100 - latin */
 @font-face {

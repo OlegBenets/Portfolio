@@ -1,0 +1,67 @@
+@import "./../../styles.scss";
+
+.my-skills-container {
+    @include position($p: relative, $t: 100px);
+    @include dFlex($jc: space-between, $ai: center, $g: 16px);
+    width: calc(100% - 200px);
+    min-height: 700px;
+    height: auto;
+    padding: 0 100px 0 100px;
+}
+
+.skills-icons-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 54px; 
+    width: 720px;
+    height: 414px;
+    div {
+        @include dFlex($jc: center, $ai: center, $g: 16px);
+        flex-direction: column;
+
+        img {
+            width: 60px;
+            height: auto;
+        }
+
+        span {
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+        }
+    }
+}
+
+.description-my-skills {
+    @include dFlex($jc: space-between, $ai: center, $g: 24px);
+    flex-direction: column;
+    width: 570px;
+    height: 300px;
+    h2 {
+        font-size: 90px;
+        font-weight: 700;
+        color: white;
+        margin: 0;
+    }
+
+    span {
+        font-size: 16px;
+        font-weight: 400;
+        color: white;
+        text-align: end;
+    }
+
+    button {
+        @include dFlex($jc: center, $ai: center);
+        width: 200px;
+        height: 58px;
+        border: none;
+        border-radius: 10px;
+        padding: 15px 30px;
+        font-size: 23px;
+        font-weight: 400;
+        background-color: $green;
+        color: white;
+    }
+}
