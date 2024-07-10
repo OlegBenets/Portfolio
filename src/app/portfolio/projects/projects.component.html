@@ -1,1 +1,11 @@
-<p>projects works!</p>
+
+  <img class="project-img" src="./../../../assets/img/{{ project.img }}" alt="{{ project.name }}" />
+  <div class="description-project">
+    <h4>{{project.name}}</h4>
+    <h5>{{formatLanguages(project.language)}}</h5>
+    <span>{{project.description}}</span>
+    <div class="button-container">
+        <button class="livetest-btn">Live test</button>
+        <button class="github-btn">Github</button>
+    </div>
+  </div>

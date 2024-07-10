@@ -3,10 +3,15 @@
 .my-skills-container {
     @include position($p: relative, $t: 100px);
     @include dFlex($jc: space-between, $ai: center, $g: 16px);
-    width: calc(100% - 200px);
+    width: 100%;
     min-height: 700px;
     height: auto;
-    padding: 0 100px 0 100px;
+
+    .green-shadow {
+        @include position($t: 200px, $l: 0);
+        width: 420px;
+        height: auto;
+    }
 }
 
 .skills-icons-container {
@@ -16,9 +21,12 @@
     gap: 54px; 
     width: 720px;
     height: 414px;
+    margin-left: 100px;
+    z-index: 1;
     div {
         @include dFlex($jc: center, $ai: center, $g: 16px);
         flex-direction: column;
+        text-align: center;
 
         img {
             width: 60px;
@@ -38,6 +46,7 @@
     flex-direction: column;
     width: 570px;
     height: 300px;
+    margin-right: 100px;
     h2 {
         font-size: 90px;
         font-weight: 700;

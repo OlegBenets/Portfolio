@@ -1,33 +1,117 @@
-/* Style inputs with type="text", select elements and textareas */
-input[type=text],[type=email], select, textarea {
-    width: 100%; /* Full width */
-    padding: 12px; /* Some padding */ 
-    border: 1px solid #ccc; /* Gray border */
-    border-radius: 4px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
-    margin-top: 6px; /* Add a top margin */
-    margin-bottom: 16px; /* Bottom margin */
-    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+@import "./../../styles.scss";
+
+.contact-container {
+  @include position($p: relative, $t: 100px);
+  @include dFlex($jc: space-between, $ai: center, $g: 16px);
+  width: 100%;
+  min-height: 700px;
+  height: auto;
+}
+
+.headline {
+  @include position($t: 0, $l: 0);
+  @include dFlex($jc: flex-start, $ai: center, $g: 16px);
+
+  .purple-line {
+    width: 50px;
+    border: 3px solid $violet;
   }
-  
-  /* Style the submit button with a specific background color etc */
-  input[type=submit] {
-    background-color: #04AA6D;
+
+  h2 {
+    font-size: 90px;
+    font-weight: 700;
     color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    margin: 0;
+}
+}
+
+.form-description-container {
+  @include dFlex($jc: space-between, $ai: flex-start, $g: 16px);
+  width: 100%;
+  height: auto;
+  margin: 0 100px;
+}
+
+.description {
+  @include dFlex($jc: flex-start, $ai: flex-start, $g: 32px);
+  flex-direction: column;
+  width: 500px;
+
+  h4 {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
   }
-  
-  /* When moving the mouse over the submit button, add a darker green color */
-  input[type=submit]:hover {
-    background-color: #45a049;
+
+  span {
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
   }
-  
-  /* Add a background color and some padding around the form */
-  .container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
+}
+
+form {
+  @include dFlex($jc: flex-start, $ai: center, $g: 32px);
+  flex-direction: column;
+  width: 620px;
+  height: 500px;
+
+  .input-name-mail {
+    width: calc(100% - 50px);
+    height: calc(50px - 30px);
+    padding: 15px 25px;
+    border: 1px solid $violet;
+    border-radius: 10px;
+    background-color: transparent;
   }
+
+  textarea {
+    width: calc(100% - 50px);
+    height: calc(200px - 30px);
+    padding: 15px 25px;
+    border: 1px solid $violet;
+    border-radius: 10px;
+    background-color: transparent;
+    resize: none;
+  }
+
+  .input-name-mail::placeholder,
+  textarea::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+  }
+}
+
+.checkbox-container {
+  @include dFlex($jc: flex-start, $ai: center, $g: 32px);
+  width: 100%;
+  height: auto;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  span {
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+  }
+}
+
+.submit {
+  @include dFlex($jc: center, $ai: center);
+  width: 195px;
+  height: 50px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  background-color: $green;
+  color: white;
+  font-size: 20px;
+}

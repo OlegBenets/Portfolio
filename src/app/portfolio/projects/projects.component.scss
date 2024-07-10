@@ -1,0 +1,63 @@
+@import "./../../../styles.scss";
+
+    .project-img {
+        width: 600px;
+        height: auto;
+    }
+
+.description-project {
+    @include dFlex($jc: center, $ai: flex-start, $g: 35px);
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+
+    h4 {
+        margin: 0;
+        font-size: 32px;
+        font-weight: 700;
+        color: $violet;
+    }
+
+    h5 {
+        margin: 0;
+        font-size: 23px;
+        font-weight: 400;
+        color: $green;
+    }
+
+    span {
+        font-size: 16px;
+        font-weight: 700;
+        color: white;
+    }
+}
+
+.button-container {
+    @include dFlex($jc: flex-start, $ai: center, $g: 46px);
+    width: 100%;
+    height: auto;
+
+    .livetest-btn {
+        @include dFlex($jc: center, $ai: center);
+        width: 152px;
+        height: 58px;
+        border: none;
+        border-radius: 10px;
+        padding: 15px 30px;
+        color: white;
+        background-color: $violet;
+        font-size: 18px;
+    }
+
+    .github-btn {
+        @include dFlex($jc: center, $ai: center);
+        width: 137px;
+        height: 58px;
+        border: 1px solid $green;
+        border-radius: 10px;
+        padding: 15px 30px;
+        color: white;
+        background-color: transparent;
+        font-size: 18px;
+    }
+}
