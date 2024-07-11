@@ -1,15 +1,38 @@
 @import "./../../styles.scss";
 
 .contact-container {
-  @include position($p: relative, $t: 100px);
+  @include position($p: relative, $t: 0px);
   @include dFlex($jc: space-between, $ai: center, $g: 16px);
   width: 100%;
-  min-height: 700px;
   height: auto;
+  padding-top: 100px;
+  padding-bottom: 200px; 
+
+  .purple-shadow {
+    @include position($t: none, $l: 0);
+    bottom: 0;
+    width: 700px;
+    height: auto;
+  }
+}
+
+.up-to-aot {
+  @include position($t: none, $l: none);
+  right: 50px;
+  bottom: 50px;
+  @include dFlex($jc: center, $ai: center);
+  border: 1px solid white;
+  border-radius: 50%;
+
+  .arrow-up {
+    width: 16px;
+    height: auto;
+    padding: 8px;
+  }
 }
 
 .headline {
-  @include position($t: 0, $l: 0);
+  @include position($t: 100px, $l: 0);
   @include dFlex($jc: flex-start, $ai: center, $g: 16px);
 
   .purple-line {
@@ -29,24 +52,27 @@
   @include dFlex($jc: space-between, $ai: flex-start, $g: 16px);
   width: 100%;
   height: auto;
-  margin: 0 100px;
+  margin: 200px 100px 0 100px;
 }
 
 .description {
   @include dFlex($jc: flex-start, $ai: flex-start, $g: 32px);
   flex-direction: column;
   width: 500px;
+  z-index: 1;
 
   h4 {
     font-size: 32px;
     font-weight: 700;
     color: white;
+    margin: 0;
   }
 
   span {
     font-size: 16px;
     font-weight: 400;
     color: white;
+    margin: 0;
   }
 }
 
@@ -54,7 +80,7 @@ form {
   @include dFlex($jc: flex-start, $ai: center, $g: 32px);
   flex-direction: column;
   width: 620px;
-  height: 500px;
+  height: auto;
 
   .input-name-mail {
     width: calc(100% - 50px);
@@ -63,6 +89,22 @@ form {
     border: 1px solid $violet;
     border-radius: 10px;
     background-color: transparent;
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+  }
+
+  .inputs-container {
+    @include dFlex($jc: flex-start, $ai: flex-start, $g: 8px);
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+
+    .error-text {
+      font-size: 14px;
+      font-weight: 400;
+      color: $error;
+    }
   }
 
   textarea {
@@ -73,6 +115,9 @@ form {
     border-radius: 10px;
     background-color: transparent;
     resize: none;
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
   }
 
   .input-name-mail::placeholder,

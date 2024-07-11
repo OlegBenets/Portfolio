@@ -1,21 +1,21 @@
 @import "./../../styles.scss";
 
 .portfolio-container {
-    @include position($p: relative, $t: 100px);
+    @include position($p: relative, $t: 0px);
     @include dFlex($jc: flex-start, $ai: center, $g: 36px);
     flex-direction: column;
     width: 100%;
-    min-height: 2000px;
     height: auto;
+    padding-top: 100px;
 
     .purple-shadow {
-        @include position($t: 60%, $l: 0);
+        @include position($t: 65%, $l: 0);
         width: 630px;
         height: auto;
     }
 
     .green-shadow {
-        @include position($t: 60%, $l: none);
+        @include position($t: 65%, $l: none);
         right: 0;
         width: 400px;
         height: auto;
@@ -61,7 +61,7 @@
 }
 
 .project-container {
-    @include dFlex($jc: center, $ai: center, $g: 32px);
+    @include dFlex($jc: center, $ai: center, $g: 100px);
     flex-direction: column;
     width: 100%;
     margin-top: 100px;

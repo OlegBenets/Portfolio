@@ -1,4 +1,5 @@
 body {
+    width: 100%;
     margin: 0;
     font-family: 'Poppins';
 }
@@ -19,6 +20,25 @@ body {
 $green: #70e61c;
 $violet: #9747ff;
 $dark_blue: #141d2f;
+$error: #E61C40;
+
+button:hover {
+  cursor: pointer;
+  background-color: $green !important;
+  transition: background-color 175ms ,transform 175ms;
+  transform: translate(5px, 5px) scale(1.2);
+  box-shadow: 0px 4px 3px 0px rgba(0, 0, 0, 0.3);
+}
+
+.submit:hover,
+.green-button:hover {
+  cursor: pointer;
+  background-color: $violet !important;
+  transition: background-color 175ms ,transform 175ms;
+  transform: translate(5px, 5px) scale(1.2);
+  box-shadow: 0px 4px 3px 0px rgba(0, 0, 0, 0.3);
+}
+
 
 
 /* poppins-100 - latin */

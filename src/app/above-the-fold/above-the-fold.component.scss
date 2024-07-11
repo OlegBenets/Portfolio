@@ -1,24 +1,16 @@
 @import './../../styles.scss';
 
 .aot-container {
-    @include position($p: relative, $t: 100px);
+    @include position($p: relative, $t: 0px);
+    @include dFlex($jc: center, $ai: flex-start);
     background-image: url(../../assets/img/Vector.png);
     background-size: 100%;
-    background-repeat: no-repeat;
-    height: 1024px;
+    background-repeat: no-repeat;  
     width: 100%;
-    @include dFlex($jc: space-evenly, $ai: center);
+    min-height: 1000px;
+    height: auto;
+    padding-top: 100px;
     background-color: $dark_blue;
-  
-    .profile-img {
-      @include position($t: 106px, $l: 47px);
-      width: 646px;
-      height: auto;
-      background-image: url(../../assets/img/photo\ shadows.png);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 100%;
-    }
   }
 
   .purple-shadow {
@@ -30,7 +22,7 @@
 
 h1 {
   margin: 0;
-  font-size: 90px;
+  font-size: clamp(2rem, 5vw, 5rem);
   font-weight: 700;
   color: white;
   text-wrap: nowrap;
@@ -38,23 +30,46 @@ h1 {
 
 h3 {
   margin: 0;
-  font-size: 58px;
+  font-size: clamp(1.5rem, 3vw, 3rem);
   font-weight: 400;
   color: $violet;
   text-wrap: nowrap;
 }
 
+.img-introduce-container {
+  @include dFlex($jc: space-between, $ai: center);
+  width: 90%;
+
+  .profile-img {
+    width: 50%;
+    max-width: 646px;
+    height: auto;
+    background-image: url(../../assets/img/photo\ shadows.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+}
+
+.introduce-btn-container {
+  @include dFlex( $jc:center, $ai:center, $g: 42px);
+  flex-direction: column;
+  width: 50%;
+  max-width: 720px;
+  height: auto;
+}
+
 
 .introduce {
-  @include position($t: 297px, $l: 622px);
-    @include dFlex($g: 35px);
-    width: 720px;
+    @include dFlex( $ai:center, $g: 8px);
+    width: 100%;
+    max-width: 720px;
     height: 170px;
     .rotate {
         @include dFlex($ai: flex-end);
         text-wrap: nowrap;
         transform: rotate(-90deg);
-        font-size: 64px;
+        font-size: clamp(1.5rem, 4vw, 4rem);
         font-weight: 400;
         color: white
     };
@@ -66,7 +81,6 @@ h3 {
 }
 
 .lets-talk-button {
-    @include position($t: 513px, $l: 892px);
     width: 165px;
     height: 58px;
     border: none;
@@ -80,11 +94,11 @@ h3 {
 
 .social-links {
   @include position($t: 903px, $l: 0px);
-  @include dFlex($jc: flex-start, $ai: center, $g: 42px);
-  width: 600px;
+  @include dFlex($jc: flex-end, $ai: center, $g: 42px);
+  width: 50%;
   height: 40px;
   .purple-line {
-    width: 100px;
+    width: 100%;
     border: 3px solid $violet;
   }
   .icons {

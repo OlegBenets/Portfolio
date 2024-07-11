@@ -1,4 +1,8 @@
 <div class="contact-container">
+  <div class="up-to-aot">
+    <img class="arrow-up" src="./../../assets/img/arrow-up.png">
+  </div>
+  <img class="purple-shadow" src="./../../assets/img/Purple shadow 4.png">
   <div class="headline">
     <div class="purple-line"></div>
   <h2>Contact</h2>
@@ -10,15 +14,27 @@
     <span>Need a Frontend developer? <b>Contact me!</b></span>
   </div>
     <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-  
-      <input class="input-name-mail" [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your name" required>
 
-      <input class="input-name-mail" [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your email" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-  
+      <div class="inputs-container">
+      <input class="input-name-mail" #name="ngModel" minlength="3" [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your name" required>
+      @if(!name.valid && name.touched) {
+        <span class="error-text">Please enter a message</span>
+       }
+    </div>
+
+      <div class="inputs-container">
+      <input class="input-name-mail" #mail="ngModel" minlength="5" [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your email" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+      @if(!mail.valid && mail.touched) {
+        <span class="error-text">Please enter a message</span>
+       }
+    </div>
+
+      <div class="inputs-container">
       <textarea #message="ngModel" minlength="4" [(ngModel)]="contactData.message" id="message" name="message" placeholder="Your message" style="height:200px" required></textarea>
        @if(!message.valid && message.touched) {
-        <span>Please enter a message</span>
+        <span class="error-text">Please enter a message</span>
        }
+      </div>
 
        <div class="checkbox-container">
         <img src="./../../assets/img/checkbox-off.png">

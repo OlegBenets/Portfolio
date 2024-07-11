@@ -1,0 +1,41 @@
+@import "./../../../styles.scss";
+
+footer {
+    @include dFlex($jc: space-between, $ai: center);
+    width: calc(100% - 200px);
+    height: calc(290px - 32px);
+    padding: 16px 100px;
+    border-top: 4px solid $green;
+    background-color: $dark_blue;
+
+    .copyright {
+        font-size: 24px;
+        font-weight: 400;
+        color: white;
+    }
+}
+
+.headline-container {
+    @include dFlex($jc: center, $ai: flex-start, $g: 4px);
+    flex-direction: column;
+
+    a {
+        font-size: 16px;
+        font-weight: 400;
+        color: white;
+        text-decoration: none;
+    }
+
+    h3 {
+        margin: 0;
+        color: white;
+        font-size: 40px;
+        span {
+            color: $green;
+        }
+      }
+}
+
+.icon-container {
+    @include dFlex($jc: space-between, $ai: center, $g: 42px);
+}

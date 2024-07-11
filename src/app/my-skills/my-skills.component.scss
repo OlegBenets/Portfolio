@@ -1,11 +1,11 @@
 @import "./../../styles.scss";
 
 .my-skills-container {
-    @include position($p: relative, $t: 100px);
+    @include position($p: relative, $t: 0px);
     @include dFlex($jc: space-between, $ai: center, $g: 16px);
     width: 100%;
-    min-height: 700px;
     height: auto;
+    padding-top: 100px;
 
     .green-shadow {
         @include position($t: 200px, $l: 0);
@@ -20,7 +20,7 @@
     grid-template-rows: repeat(3, auto);
     gap: 54px; 
     width: 720px;
-    height: 414px;
+    height: auto;
     margin-left: 100px;
     z-index: 1;
     div {
