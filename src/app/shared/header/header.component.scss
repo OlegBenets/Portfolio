@@ -13,6 +13,11 @@ header {
   background-color: $dark_blue;
   z-index: 100;
 
+  .back-to-aot {
+    text-decoration: none;
+    scroll-behavior: smooth;
+  }
+
   h3 {
     margin: 0;
     color: white;
@@ -33,5 +38,12 @@ header {
     font-weight: 400;
     text-decoration: none;
     color: white;
+    scroll-behavior: smooth;
+    transition: color ease-in-out 175ms;
+
+    &:hover {
+      cursor: pointer;
+      color: $green;
+    }
   }
 }

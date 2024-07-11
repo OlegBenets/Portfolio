@@ -61,10 +61,10 @@
         text-align: end;
     }
 
-    button {
+    .to-contact {
         @include dFlex($jc: center, $ai: center);
-        width: 200px;
-        height: 58px;
+        width: calc(200px - 60px);
+        height: calc(58px - 30px);
         border: none;
         border-radius: 10px;
         padding: 15px 30px;
@@ -72,5 +72,6 @@
         font-weight: 400;
         background-color: $green;
         color: white;
+        text-decoration: none;
     }
 }

@@ -4,6 +4,10 @@ body {
     font-family: 'Poppins';
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @mixin dFlex($jc: center, $ai: center, $g: 0) {
   display: flex;
   justify-content: $jc;

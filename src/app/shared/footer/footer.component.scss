@@ -15,6 +15,11 @@ footer {
     }
 }
 
+.back-to-aot {
+    text-decoration: none;
+    scroll-behavior: smooth;
+  }
+
 .headline-container {
     @include dFlex($jc: center, $ai: flex-start, $g: 4px);
     flex-direction: column;
