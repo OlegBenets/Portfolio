@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './shared/header/header.component';
-import { AboveTheFoldComponent } from './above-the-fold/above-the-fold.component';
-import { AboutMeComponent } from './about-me/about-me.component';
-import { MySkillsComponent } from './my-skills/my-skills.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { MainContentComponent } from './main-content/main-content.component';
 
 @Component({
   selector: 'app-root',
@@ -15,13 +10,8 @@ import { FooterComponent } from './shared/footer/footer.component';
   imports: [
     CommonModule, 
     RouterOutlet,
-    HeaderComponent, 
-    AboveTheFoldComponent,
-    AboutMeComponent,
-    MySkillsComponent,
-    PortfolioComponent,
-    ContactComponent,
-    FooterComponent],
+    FooterComponent,
+    MainContentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -1,0 +1,24 @@
+@import './../../styles.scss';
+
+.imprint-container {
+    width: calc(100% - 200px);
+    min-height: calc(76vh - 200px);
+    height: auto;
+    color: white;
+    padding: 100px;
+}
+
+h1 {
+    margin: 0;
+}
+
+a {
+    color: $violet;
+    text-decoration: none;
+    
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+}

@@ -3,7 +3,8 @@
 footer {
     @include dFlex($jc: space-between, $ai: center);
     width: calc(100% - 200px);
-    height: calc(290px - 32px);
+    min-height: calc(220px - 32px);
+    height: auto;
     padding: 16px 100px;
     border-top: 4px solid $green;
     background-color: $dark_blue;
