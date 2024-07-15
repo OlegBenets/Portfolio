@@ -25,8 +25,31 @@ $green: #70e61c;
 $violet: #9747ff;
 $dark_blue: #141d2f;
 $error: #E61C40;
+$turkis: #1CDAE6;
 
-button:hover {
+*{
+  scrollbar-width: thin;
+  scrollbar-color: $violet $dark_blue;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $violet;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $dark_blue;
+  border: 1px solid $violet;
+}
+
+
+.livetest-btn:hover,
+.github-btn:hover {
   cursor: pointer;
   background-color: $green !important;
   transition: background-color 175ms ,transform 175ms;

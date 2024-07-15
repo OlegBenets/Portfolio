@@ -24,10 +24,16 @@
   border: 1px solid white;
   border-radius: 50%;
 
-  .arrow-up {
+  a {
+    text-decoration: none;
     width: 16px;
-    height: auto;
+    height: 16px;
     padding: 8px;
+
+    .arrow-up {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
@@ -81,17 +87,69 @@ form {
   flex-direction: column;
   width: 620px;
   height: auto;
+  z-index: 1;
 
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+
+  .status-icon {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+input, textarea {
+  border: 1px solid $violet;
+  background-color: transparent; 
+  transition: border-color 0.3s, background-color 0.3s;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+
+  &:hover {
+    border-color: $turkis;
+  }
+
+  &:focus {
+    border-color: $turkis; 
+    background-color: transparent;
+    outline: none; 
+  }
+
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    -webkit-text-fill-color: white;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+  
+  &.ng-valid, textarea.ng-valid {
+    border-color: $green;
+  }
+
+  &.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+    border-color: $error;
+  }
+}
+
+  
   .input-name-mail {
     width: calc(100% - 50px);
     height: calc(50px - 30px);
     padding: 15px 25px;
-    border: 1px solid $violet;
     border-radius: 10px;
-    background-color: transparent;
-    font-size: 16px;
-    font-weight: 400;
-    color: white;
+  }
+
+  textarea {
+    width: calc(100% - 50px);
+    height: calc(200px - 30px);
+    padding: 15px 25px;
+    border-radius: 10px;
+    resize: none;
   }
 
   .inputs-container {
@@ -105,19 +163,6 @@ form {
       font-weight: 400;
       color: $error;
     }
-  }
-
-  textarea {
-    width: calc(100% - 50px);
-    height: calc(200px - 30px);
-    padding: 15px 25px;
-    border: 1px solid $violet;
-    border-radius: 10px;
-    background-color: transparent;
-    resize: none;
-    font-size: 16px;
-    font-weight: 400;
-    color: white;
   }
 
   .input-name-mail::placeholder,

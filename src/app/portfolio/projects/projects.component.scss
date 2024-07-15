@@ -39,25 +39,27 @@
 
     .livetest-btn {
         @include dFlex($jc: center, $ai: center);
-        width: 152px;
-        height: 58px;
+        width: calc(152px - 60px);
+        height: calc(58px - 30px);
         border: none;
         border-radius: 10px;
         padding: 15px 30px;
         color: white;
         background-color: $violet;
         font-size: 18px;
+        text-decoration: none;
     }
 
     .github-btn {
         @include dFlex($jc: center, $ai: center);
-        width: 137px;
-        height: 58px;
+        width: calc(137px - 60px);
+        height: calc(58px - 30px);
         border: 1px solid $green;
         border-radius: 10px;
         padding: 15px 30px;
         color: white;
         background-color: transparent;
         font-size: 18px;
+        text-decoration: none;
     }
 }

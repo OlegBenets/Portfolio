@@ -5,7 +5,12 @@
     <h5>{{formatLanguages(project.language)}}</h5>
     <span>{{project.description}}</span>
     <div class="button-container">
-        <button class="livetest-btn">Live test</button>
-        <button class="github-btn">Github</button>
+      @if (project.liveUrl) {
+        <a [href]="project.liveUrl" class="livetest-btn">Live test</a>
+      }
+
+      @if (project.githubUrl) {
+        <a [href]="project.githubUrl" class="github-btn">Github</a>
+      }
     </div>
   </div>

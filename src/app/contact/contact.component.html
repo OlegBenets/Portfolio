@@ -1,6 +1,6 @@
 <div class="contact-container">
   <div class="up-to-aot">
-    <img class="arrow-up" src="./../../assets/img/arrow-up.png">
+    <a href="#aot"><img class="arrow-up" src="./../../assets/img/arrow-up.png"></a>
   </div>
   <img class="purple-shadow" src="./../../assets/img/Purple shadow 4.png">
   <div class="headline">
@@ -16,24 +16,42 @@
     <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
 
       <div class="inputs-container">
+        <div class="input-wrapper">
       <input class="input-name-mail" #name="ngModel" minlength="3" [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your name" required>
+
       @if(!name.valid && name.touched) {
-        <span class="error-text">Please enter a message</span>
+        <img class="status-icon" src="./../../assets/img/Not-Valid.png">
+        <span class="error-text">Please enter your name</span>
+       } @else if (name.valid) {
+        <img class="status-icon" src="./../../assets/img/Valid.png">
        }
+      </div>
     </div>
 
       <div class="inputs-container">
+        <div class="input-wrapper">
       <input class="input-name-mail" #mail="ngModel" minlength="5" [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your email" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+     
       @if(!mail.valid && mail.touched) {
-        <span class="error-text">Please enter a message</span>
+        <img class="status-icon" src="./../../assets/img/Not-Valid.png">
+        <span class="error-text">Please enter a valid email</span>
+       } @else if (mail.valid) {
+        <img class="status-icon" src="./../../assets/img/Valid.png">
        }
+      </div>
     </div>
 
       <div class="inputs-container">
+        <div class="input-wrapper">
       <textarea #message="ngModel" minlength="4" [(ngModel)]="contactData.message" id="message" name="message" placeholder="Your message" style="height:200px" required></textarea>
-       @if(!message.valid && message.touched) {
+
+      @if(!message.valid && message.touched) {
+        <img class="status-icon" src="./../../assets/img/Not-Valid.png">
         <span class="error-text">Please enter a message</span>
+       } @else if (message.valid) {
+        <img class="status-icon" src="./../../assets/img/Valid.png">
        }
+      </div>
       </div>
 
        <div class="checkbox-container">

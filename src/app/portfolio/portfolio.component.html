@@ -12,10 +12,10 @@
   >
 
   <div class="project-container">
-    @for(project of projectsdata.projectslist; track project.name; let index =
-    $index){
+    @for(project of projectsdata.projectslist; track project.name; let odd =
+    $odd){
 
-    <app-projects [project]="project" class="single-project" [ngClass]="{'reversed': index % 2 == 1}"></app-projects>
+    <app-projects [project]="project" class="single-project" [ngClass]="{'reversed' : odd}"></app-projects>
     }
   </div>
 </div>
