@@ -43,7 +43,7 @@
 
       <div class="inputs-container">
         <div class="input-wrapper">
-      <textarea #message="ngModel" minlength="4" [(ngModel)]="contactData.message" id="message" name="message" placeholder="Your message" style="height:200px" required></textarea>
+      <textarea #message="ngModel" minlength="4" [(ngModel)]="contactData.message" id="message" name="message" placeholder="Your message" required></textarea>
 
       @if(!message.valid && message.touched) {
         <img class="status-icon" src="./../../assets/img/Not-Valid.png">
@@ -54,12 +54,18 @@
       </div>
       </div>
 
-       <div class="checkbox-container">
-        <img src="./../../assets/img/checkbox-off.png">
-        <span>I've read the <a href="#">privacy policy</a>and agree to the processing of my data as outlined.</span>
+       <div class="inputs-container">
+        <div class="checkbox-container">
+         <input class="checkbox" #checkbox="ngModel" [(ngModel)]="contactData.checkbox" type="checkbox" name="checkbox" id="checkbox" required>
+         <label for="checkbox"></label>
+         <span>I've read the <a href="#">privacy policy</a>and agree to the processing of my data as outlined.</span>
+        </div>
+        @if (!checkbox.valid && checkbox.touched) {
+          <span class="error-text">Please accept the privacy policy</span>
+        }
        </div>
 
-      <input class="submit" type="submit" value="Send message :)">
+      <input class="submit" type="submit" value="Send message :)" [disabled]="!contactForm.form.valid">
   
     </form>
   </div>

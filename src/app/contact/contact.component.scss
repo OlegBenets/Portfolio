@@ -107,6 +107,8 @@ input, textarea {
   border: 1px solid $violet;
   background-color: transparent; 
   transition: border-color 0.3s, background-color 0.3s;
+  padding: 15px 25px;
+  border-radius: 10px;
   font-size: 16px;
   font-weight: 400;
   color: white;
@@ -134,21 +136,23 @@ input, textarea {
   &.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
     border-color: $error;
   }
+
+  &::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+  }
 }
 
   
   .input-name-mail {
     width: calc(100% - 50px);
     height: calc(50px - 30px);
-    padding: 15px 25px;
-    border-radius: 10px;
   }
 
   textarea {
     width: calc(100% - 50px);
     height: calc(200px - 30px);
-    padding: 15px 25px;
-    border-radius: 10px;
     resize: none;
   }
 
@@ -157,20 +161,13 @@ input, textarea {
     flex-direction: column;
     width: 100%;
     height: auto;
-
-    .error-text {
-      font-size: 14px;
-      font-weight: 400;
-      color: $error;
-    }
   }
+}
 
-  .input-name-mail::placeholder,
-  textarea::placeholder {
-    font-size: 16px;
-    font-weight: 400;
-    color: white;
-  }
+.error-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: $error !important;
 }
 
 .checkbox-container {
@@ -178,13 +175,50 @@ input, textarea {
   width: 100%;
   height: auto;
 
-  img {
-    width: 20px;
-    height: 20px;
+  .checkbox {
+    display: none;
+
+    & + label {
+      width: 20px;
+      height: 20px;
+      border: 1px solid $green;
+      border-radius: 4px;
+      background-color: transparent;
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+
+      &:after {
+        content: '';
+        width: 6px;
+        height: 12px;
+        border: solid $green;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        opacity: 0;
+        transition: opacity 175ms ease-in-out;
+      }
+    }
+
+    &:checked + label {
+      &:after {
+        opacity: 1;
+      }
+    }
   }
 
   a {
     text-decoration: none;
+    color: $violet;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   span {
@@ -199,9 +233,14 @@ input, textarea {
   width: 195px;
   height: 50px;
   padding: 15px 30px;
-  border: none;
+  border: none !important;
   border-radius: 10px;
-  background-color: $green;
+  background-color: $green !important;
   color: white;
   font-size: 20px;
+
+  &:disabled {
+    background-color: rgba($color: grey, $alpha: 0.5) !important;
+    cursor: not-allowed;
+  }
 }

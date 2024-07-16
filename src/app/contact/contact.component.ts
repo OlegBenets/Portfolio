@@ -1,6 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { AfterViewInit, Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-contact',
@@ -9,14 +13,19 @@ import { FormsModule, NgForm } from '@angular/forms';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
-export class ContactComponent {
+export class ContactComponent implements AfterViewInit{
 
   http = inject(HttpClient);
+
+  ngAfterViewInit(): void {
+    this.animateContact();
+  }
 
   contactData = {
     name: "",
     email: "",
     message: "",
+    checkbox: false,
   }
 
   mailTest = true;
@@ -49,5 +58,37 @@ export class ContactComponent {
 
       ngForm.resetForm();
     }
+  }
+
+  animateContact(): void {
+    let headline = document.querySelectorAll('.headline');
+    let form = document.querySelectorAll('.form-description-container');
+
+    gsap.fromTo(form,
+      {y: '100%', opacity: 0},
+      {
+        opacity: 1,
+        y: '0%',
+        scrollTrigger: {
+          trigger: form,
+          start: 'top 99%',
+          end: 'top 60%',
+      },
+      duration: 1,
+    }
+    );
+      gsap.fromTo(headline, 
+        { x: '-100%', opacity: 0 },
+        { x: '0%', 
+          opacity: 1, 
+          scrollTrigger: {
+            trigger: headline,
+            start: 'top 99%',
+            end: 'top 40%',
+            scrub: true,
+          },
+        duration: 1
+        },
+      )
   }
 }
