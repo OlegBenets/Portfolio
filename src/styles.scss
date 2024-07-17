@@ -1,13 +1,8 @@
-body {
-    width: 100%;
-    margin: 0;
-    font-family: 'Poppins';
-    overflow-x: hidden;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+$green: #70e61c;
+$violet: #9747ff;
+$dark_blue: #141d2f;
+$error: #E61C40;
+$turkis: #1CDAE6;
 
 @mixin dFlex($jc: center, $ai: center, $g: 0) {
   display: flex;
@@ -22,15 +17,34 @@ html {
   left: $l;
 }
 
-$green: #70e61c;
-$violet: #9747ff;
-$dark_blue: #141d2f;
-$error: #E61C40;
-$turkis: #1CDAE6;
-
 *{
   scrollbar-width: thin;
   scrollbar-color: $violet $dark_blue;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    font-family: 'Poppins';
+    overflow-x: hidden;
+    background-color: $dark_blue;
+}
+
+.container {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $dark_blue;
+    max-width: 1920px;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 ::-webkit-scrollbar {

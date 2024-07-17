@@ -24,17 +24,17 @@ export class AboveTheFoldComponent implements OnInit {
     gsap.timeline()
       .fromTo(imageOfMe, 
         { x: '-100%', opacity: 0 },
-        { x: '0%', opacity: 1, duration: 2 }
+        { x: '0%', opacity: 1, duration: 1 }
       )
       .fromTo(nameContainer, 
         { x: '100%', opacity: 0 },
-        { x: '0%', opacity: 1, duration: 2 },
-        '-=2'
+        { x: '0%', opacity: 1, duration: 1 },
+        '-=1'
       )
       .fromTo(button, 
         { y: '200%', opacity: 0 },
-        { y: '0%', opacity: 1, duration: 2 },
-        '-=2' 
+        { y: '0%', opacity: 1, duration: 1 },
+        '-=1' 
       );
       gsap.fromTo(scroll, 
         {y: -15},
@@ -42,7 +42,7 @@ export class AboveTheFoldComponent implements OnInit {
       );
       gsap.fromTo(links, 
         { x: '-100%', opacity: 0 },
-        { x: '0%', opacity: 1, duration: 2 }
+        { x: '0%', opacity: 1, duration: 1 }
       );
   }
 }

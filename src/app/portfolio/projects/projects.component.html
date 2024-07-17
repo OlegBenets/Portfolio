@@ -6,11 +6,11 @@
     <span>{{project.description}}</span>
     <div class="button-container">
       @if (project.liveUrl) {
-        <a [href]="project.liveUrl" class="livetest-btn">Live test</a>
+        <a [href]="project.liveUrl" target="_blank" class="livetest-btn">Live test</a>
       }
 
       @if (project.githubUrl) {
-        <a [href]="project.githubUrl" class="github-btn">Github</a>
+        <a [href]="project.githubUrl" target="_blank" class="github-btn">Github</a>
       }
     </div>
   </div>

@@ -28,15 +28,25 @@
         flex-direction: column;
         text-align: center;
 
-        img {
+        .skills-icons {
             width: 60px;
             height: auto;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
 
         span {
             font-size: 16px;
             font-weight: 700;
             color: white;
+            transition: transform 175ms ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
         }
     }
 }

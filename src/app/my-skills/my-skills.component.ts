@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -10,9 +10,12 @@ gsap.registerPlugin(ScrollTrigger);
   standalone: true,
   imports: [CommonModule],
   templateUrl: './my-skills.component.html',
-  styleUrl: './my-skills.component.scss'
+  styleUrl: './my-skills.component.scss',
 })
 export class MySkillsComponent implements AfterViewInit {
+
+  constructor(private elementRef: ElementRef) {}
+
   skills = [
     { img: './../../assets/img/Angular.png', name: 'Angular' },
     { img: './../../assets/img/Type-script.png', name: 'TypeScript' },
@@ -28,42 +31,59 @@ export class MySkillsComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.animateMySkills();
+    this.shakeEffect();
   }
 
   animateMySkills(): void {
     let description = document.querySelectorAll('.description-my-skills');
     let skills = document.querySelectorAll('.skills-icons-container');
 
-      gsap.fromTo(skills,
-        {y: '100%', opacity: 0},
-        {
-          opacity: 1,
-          y: '0%',
-          scrollTrigger: {
-            trigger: skills,
-            start: 'top 99%',
-            end: 'top 75%',
-            scrub: true,
+    gsap.fromTo(
+      skills,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: skills,
+          start: 'top 60%',
+          end: 'top 40%',
+          scrub: true,
         },
         duration: 1,
       }
-      );
+    );
 
-      gsap.fromTo(description,
-        {y: '100%', opacity: 0},
-        {
-          opacity: 1,
-          y: '0%',
-          scrollTrigger: {
-            trigger: description,
-            start: 'top 99%',
-            end: 'top 75%',
-            scrub: true,
+    gsap.fromTo(
+      description,
+      { y: '100%', opacity: 0 },
+      {
+        opacity: 1,
+        y: '0%',
+        scrollTrigger: {
+          trigger: description,
+          start: 'top 99%',
+          end: 'top 75%',
+          scrub: true,
         },
         duration: 1,
       }
-      );
+    );
   }
 
+  shakeEffect(): void {
+    let elements = this.elementRef.nativeElement.querySelectorAll('.skills-icons');
+
+    elements.forEach((element: HTMLElement) => {
+      element.addEventListener('mouseenter', () => {
+        gsap.to(element, {
+          duration: 0.1,
+          x: 10,
+          yoyo: true,
+          repeat: 6,
+          ease: 'power1.inOut',
+        });
+      });
+    });
+  }
 
 }
