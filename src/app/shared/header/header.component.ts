@@ -12,12 +12,13 @@ import { gsap } from 'gsap';
 export class HeaderComponent implements OnInit{
 
   isBurgerMenuVisible: boolean = false;
-  currentImage: string = './../../../assets/img/burger menu.png';
   images: string[] = [
+    './../../../assets/img/burger menu.png',
     './../../../assets/img/Property 1=Transition.png',
     './../../../assets/img/Property 1=close medium.png',
     './../../../assets/img/Property 1=CLOSE FINAL.png'
   ];
+  currentImage: string = this.images[0];
 
   animationInterval: any;
 
@@ -55,7 +56,7 @@ export class HeaderComponent implements OnInit{
       if(!this.isBurgerMenuVisible || index === 0) {
         clearInterval(this.animationInterval);
       }
-    }, 80);
+    }, 90);
   }
 
   reverseAnimationImages() {
@@ -67,6 +68,6 @@ export class HeaderComponent implements OnInit{
       if(index < 0 || this.isBurgerMenuVisible) {
         clearInterval(this.animationInterval);
       }
-    }, 80);
+    }, 90);
   }
 }

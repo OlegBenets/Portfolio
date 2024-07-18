@@ -23,10 +23,10 @@
 
 <div class="fullscreen-menu"[ngClass]="{'show': isBurgerMenuVisible}">
   <div class="to-section-links-mobile">
-    <a href="#about-me">About me</a>
-    <a href="#skills">Skills</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
+    <a (click)="toggleBurgerMenu()" href="#about-me">About me</a>
+    <a (click)="toggleBurgerMenu()" href="#skills">Skills</a>
+    <a (click)="toggleBurgerMenu()" href="#portfolio">Portfolio</a>
+    <a (click)="toggleBurgerMenu()" href="#contact">Contact</a>
   </div>
 </div>
 
