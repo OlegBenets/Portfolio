@@ -75,14 +75,22 @@ export class MySkillsComponent implements AfterViewInit {
 
     elements.forEach((element: HTMLElement) => {
       element.addEventListener('mouseenter', () => {
-        gsap.to(element, {
-          duration: 0.1,
-          x: 10,
-          yoyo: true,
-          repeat: 6,
-          ease: 'power1.inOut',
-        });
+        this.animateElement(element);
       });
+      element.addEventListener('mouseleave', () => {
+        gsap.killTweensOf(element); // Stop all played Animations for this Element
+        gsap.to(element, {x: 0, y: 0}); 
+      });
+    });
+  }
+
+  animateElement(element: HTMLElement): void {
+    gsap.to(element, {
+      duration: 0.1,
+      x: 10,
+      yoyo: true,
+      repeat: 6,
+      ease: 'power1.inOut',
     });
   }
 

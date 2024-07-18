@@ -17,7 +17,6 @@ header {
 
   .back-to-aot {
     text-decoration: none;
-    scroll-behavior: smooth;
   }
 
   h3 {
@@ -30,7 +29,11 @@ header {
   }
 }
 
-.go-to {
+.links-translate-container {
+  @include dFlex($jc: space-between, $ai: center, $g: 46px);
+}
+
+.to-section-links {
   display: flex;
   align-items: center;
   gap: 29px;
@@ -40,12 +43,32 @@ header {
     font-weight: 400;
     text-decoration: none;
     color: white;
-    scroll-behavior: smooth;
     transition: color ease-in-out 175ms;
 
     &:hover {
       cursor: pointer;
       color: $green;
+    }
+  }
+
+  .translate-container {
+    @include dFlex($jc: center, $ai: center, $g: 12px);
+    
+    .translate-button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      transition: color ease-in-out 175ms;
+
+      &:hover {
+        color: $green;
+      }
+
+      span {
+        color: white;
+      }
     }
   }
 }

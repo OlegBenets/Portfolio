@@ -122,6 +122,8 @@ h3 {
     .icons {
       width: 30px;
       height: 30px;
+      transition: transform 175ms ease-in-out;
+
       &:hover {
         transform: scale(1.3);
       }

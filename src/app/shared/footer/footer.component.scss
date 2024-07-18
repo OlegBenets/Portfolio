@@ -24,11 +24,15 @@ footer {
     @include dFlex($jc: center, $ai: flex-start, $g: 4px);
     flex-direction: column;
 
-    a {
+    .imprint {
         font-size: 16px;
         font-weight: 400;
         color: white;
         text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     h3 {
@@ -50,4 +54,10 @@ footer {
     text-decoration: none;
     width: 30px;
     height: 30px;
+    transition: transform 175ms ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.3);
+    }
 }

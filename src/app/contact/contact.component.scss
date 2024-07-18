@@ -23,6 +23,16 @@
   @include dFlex($jc: center, $ai: center);
   border: 1px solid white;
   border-radius: 50%;
+  transition: border 175ms ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    border: 1px solid $green;
+
+    .arrow-up {
+      content: url('./../../assets/img/arrow-green.png');
+    }
+  }
 
   a {
     text-decoration: none;
@@ -33,6 +43,7 @@
     .arrow-up {
       width: 100%;
       height: auto;
+      transition: all 175ms ease-in-out;
     }
   }
 }
