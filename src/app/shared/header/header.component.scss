@@ -15,6 +15,11 @@ header {
   background-color: $dark_blue;
   z-index: 100;
 
+  @media ( max-width: 920px) {
+    width: calc(100% - 80px);
+    padding: 37px 40px;
+  }
+
   .back-to-aot {
     text-decoration: none;
   }
@@ -30,45 +35,116 @@ header {
 }
 
 .links-translate-container {
-  @include dFlex($jc: space-between, $ai: center, $g: 46px);
-}
+  @include dFlex($jc: space-between, $ai: center, $g: 80px);
 
-.to-section-links {
-  display: flex;
-  align-items: center;
-  gap: 29px;
+  .to-section-links {
+    @include dFlex($ai: center, $g: 29px);
+    gap: 29px;
 
-  a {
-    font-size: 24px;
-    font-weight: 400;
-    text-decoration: none;
-    color: white;
-    transition: color ease-in-out 175ms;
-
-    &:hover {
-      cursor: pointer;
-      color: $green;
+    @media ( max-width: 920px) {
+      display: none;
+    }
+  
+    a {
+      font-size: 24px;
+      font-weight: 400;
+      text-decoration: none;
+      color: white;
+      transition: color ease-in-out 175ms;
+  
+      &:hover {
+        cursor: pointer;
+        color: $green;
+      }
     }
   }
 
   .translate-container {
-    @include dFlex($jc: center, $ai: center, $g: 12px);
+    @include dFlex($jc: center, $ai: center, $g: 8px);
+    
+    @media ( max-width: 920px) {
+      display: none;
+    }
     
     .translate-button {
       background: none;
       border: none;
       color: white;
-      font-size: 18px;
+      font-size: 22px;
       cursor: pointer;
       transition: color ease-in-out 175ms;
 
       &:hover {
-        color: $green;
-      }
-
-      span {
-        color: white;
+        color: $violet;
       }
     }
   }
+
+  .border {
+    border: 1px solid white;
+    height: 24px;
+  }
+
+  .burger-menu {
+    display: none;
+
+    @media ( max-width: 920px) {
+      display: block;
+    }
+
+    .burger-menu-btn {
+      background: none;
+      border: none;
+
+      &:hover {
+        cursor: pointer;
+      } 
+    }
+  }
 }
+
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($dark_blue, 0.5);
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 175ms ease-in-out, opacity 175ms ease-in-out, visibility 175ms ease-in-out;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .to-section-links-mobile {
+      @include dFlex($jc: center, $ai: center, $g: 29px);
+      flex-direction: column;
+    
+      a {
+        font-size: 42px;
+        font-weight: 700;
+        text-decoration: none;
+        color: white;
+        transition: color ease-in-out 175ms;
+    
+        &:hover {
+          cursor: pointer;
+          color: $green;
+        }
+      }
+    }
+  }
+
+
+
+

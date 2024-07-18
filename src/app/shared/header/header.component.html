@@ -10,8 +10,24 @@
     </div>
     <div class="translate-container">
         <button class="translate-button">de</button>
-        <span>|</span>
+        <div class="border"></div>
         <button class="translate-button">en</button>
+    </div>
+    <div class="burger-menu">
+      <button (click)="toggleBurgerMenu()" class="burger-menu-btn">
+        <img class="burger-menu-img" [src]="currentImage">
+      </button>
     </div>
   </div>
 </header>
+
+<div class="fullscreen-menu"[ngClass]="{'show': isBurgerMenuVisible}">
+  <div class="to-section-links-mobile">
+    <a href="#about-me">About me</a>
+    <a href="#skills">Skills</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+
+
