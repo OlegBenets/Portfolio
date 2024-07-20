@@ -8,10 +8,19 @@
     height: auto;
     padding-top: 200px;
 
+    @media ( max-width: 920px) {
+    padding-top: 100px;
+      }
+
     .purple-shadow {
         @include position($t: 65%, $l: 0);
         width: 630px;
         height: auto;
+
+        @media ( max-width: 920px) {
+            @include position($t: 70%, $l: 0);
+            width: 330px;
+        }
     }
 
     .green-shadow {
@@ -19,6 +28,10 @@
         right: 0;
         width: 400px;
         height: auto;
+
+        @media ( max-width: 920px) {
+            width: 200px;
+        }
     }
 }
 
@@ -27,6 +40,13 @@
     width: 80%;
     height: 500px;
     margin: 0 auto;
+
+    @media ( max-width: 920px) {
+        @include dFlex($jc: center, $ai: center, $g: 12px);
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+      }
 }
 
 .portfolio-headline {
@@ -41,6 +61,11 @@
         font-weight: 700;
         color: white;
         margin: 0;
+
+        @media (max-width: 920px) {
+            font-size: 74px;
+            width: auto;
+          }
     }
 
     .purple-line {
@@ -66,8 +91,16 @@
     width: 100%;
     margin-top: 100px;
     z-index: 5;
+
+    @media ( max-width: 920px) {
+        margin-top: 0px;
+      }
 }
 
 .reversed {
     flex-direction: row-reverse;
+
+    @media ( max-width: 920px) {
+        flex-direction: column;
+      }
   }

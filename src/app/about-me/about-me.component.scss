@@ -8,6 +8,11 @@
   height: auto;
   padding-top: 200px;
   z-index: 3;
+
+  @media ( max-width: 920px) {
+    @include dFlex($jc: center, $ai: center);
+    padding-top: 100px;
+  }
 }
 
 h2 {
@@ -15,6 +20,10 @@ h2 {
   font-weight: 700;
   color: white;
   margin: 0;
+  
+  @media ( max-width: 920px) {
+    font-size: 74px;
+  }
 }
 
 .description-about-me {
@@ -23,6 +32,10 @@ h2 {
   width: 470px;
   height: auto;
   margin-left: 100px;
+
+  @media ( max-width: 920px) {
+    margin-left: 0px;
+  }
 
   .introduce {
     font-size: 16px;
@@ -54,6 +67,10 @@ h2 {
 
 .small-image-container {
     @include dFlex($jc: flex-end, $ai: center);
+
+    @media ( max-width: 920px) {
+      display: none;
+    }
 }
 
 .green-line {

@@ -55,14 +55,14 @@ export class MySkillsComponent implements AfterViewInit {
 
     gsap.fromTo(
       description,
-      { y: '100%', opacity: 0 },
+      { x: '100%', opacity: 0 },
       {
         opacity: 1,
-        y: '0%',
+        x: '0%',
         scrollTrigger: {
           trigger: description,
           start: 'top 99%',
-          end: 'top 75%',
+          end: 'top 50%',
           scrub: true,
         },
         duration: 1,

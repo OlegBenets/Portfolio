@@ -7,6 +7,12 @@
     height: auto;
     padding-top: 200px;
 
+    @media ( max-width: 920px) {
+        @include dFlex($jc: space-between, $ai: center, $g: 50px);
+        flex-direction: column-reverse;
+        padding-top: 100px;
+      }
+
     .green-shadow {
         @include position($t: 200px, $l: 0);
         width: 420px;
@@ -19,10 +25,23 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, auto);
     gap: 54px; 
-    width: 720px;
+    max-width: 720px;
+    width: 50%;
     height: auto;
     margin-left: 100px;
     z-index: 1;
+  
+    @media (max-width: 920px) {
+      margin-left: 0px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, auto);
+      gap: 12px;
+  
+      &:nth-child(12) {
+        grid-column: 2 / 3;
+      }
+    }
+
     div {
         @include dFlex($jc: center, $ai: center, $g: 16px);
         flex-direction: column;
@@ -54,14 +73,26 @@
 .description-my-skills {
     @include dFlex($jc: space-between, $ai: center, $g: 24px);
     flex-direction: column;
-    width: 570px;
+    max-width: 570px;
+    width: 50%;
     height: 300px;
     margin-right: 100px;
+
+    @media ( max-width: 920px) {
+        @include dFlex($jc: center, $ai: center, $g: 12px);
+        text-align: center;
+        margin-right: 0px;
+      }
+    
     h2 {
         font-size: 90px;
         font-weight: 700;
         color: white;
         margin: 0;
+
+        @media ( max-width: 920px) {
+            font-size: 74px;
+          }
     }
 
     span {
@@ -69,6 +100,10 @@
         font-weight: 400;
         color: white;
         text-align: end;
+
+        @media ( max-width: 920px) {
+            text-align: center;
+          }
     }
 
     .to-contact {
@@ -83,5 +118,6 @@
         background-color: $green;
         color: white;
         text-decoration: none;
+        z-index: 1000;
     }
 }

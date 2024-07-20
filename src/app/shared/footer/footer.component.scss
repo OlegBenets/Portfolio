@@ -7,6 +7,14 @@ footer {
     padding: 16px 100px;
     border-top: 4px solid $green;
     background-color: $dark_blue;
+    z-index: 100;
+
+    @media ( max-width: 920px) {
+        @include dFlex($jc: center, $ai: center, $g: 32px);
+        flex-direction: column;
+        min-height: 180px;
+        height: 300px;
+    }
 
     .copyright {
         font-size: 24px;
@@ -23,6 +31,10 @@ footer {
 .headline-container {
     @include dFlex($jc: center, $ai: flex-start, $g: 4px);
     flex-direction: column;
+
+    @media ( max-width: 920px) {
+        @include dFlex($jc: center, $ai: center, $g: 12px);
+    }
 
     .imprint {
         font-size: 16px;
