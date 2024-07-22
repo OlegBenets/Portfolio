@@ -22,3 +22,13 @@ a {
     }
 
 }
+
+.mail {
+    color: $violet;
+    text-decoration: none;
+    
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}

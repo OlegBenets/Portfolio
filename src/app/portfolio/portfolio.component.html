@@ -3,13 +3,12 @@
   <img class="green-shadow" src="./../../assets/img/Green shadow 3.png">
   <div class="portfolio-headline">
     <div class="purple-line"></div>
-    <h2>Portfolio</h2>
+    <h2>{{ 'PORTFOLIO' | translate }}</h2>
     <div class="purple-line-long"></div>
   </div>
-  <span class="description"
-    >Explore a selection of my work here - Interact with projects to see my
-    skills in action.</span
-  >
+  <span class="description">
+    {{ 'PORTFOLIO_DESCRIPTION' | translate }}
+  </span>
 
   <div class="project-container">
     @for(project of projectsdata.projectslist; track project.name; let odd =

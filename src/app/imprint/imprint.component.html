@@ -1,15 +1,10 @@
 <div class="imprint-container">
-    <h1>Impressum</h1>
-
-    <p>Oleg Benets<br />
-    Musterstra&szlig;e 111<br />
-    Geb&auml;ude 44<br />
-    90210 Musterstadt</p>
-    
-    <h2>Kontakt</h2>
-    <p>Telefon: &#91;Telefonnummer&#93;<br />
-    E-Mail: benetsoleg&#64;gmail.com</p>
-    
-    <p>Quelle: <a target="_blank" href="https://www.e-recht24.de">https://www.e-recht24.de</a></p>
-    
+  <h1>{{ 'IMPRINT' | translate }}</h1>
+  <p>{{ 'IMPRESSUM_PARAGRAPH_1' | translate }}</p>
+  <p [innerHTML]="translate.instant('IMPRESSUM_PARAGRAPH_2')"></p>
+  <p [innerHTML]="translate.instant('IMPRESSUM_PARAGRAPH_3')"></p>
+  <p [innerHTML]="translate.instant('IMPRESSUM_PARAGRAPH_4')"></p>
+  <p [innerHTML]="translate.instant('IMPRESSUM_PARAGRAPH_5')"></p>
+  <br>
+  <p [innerHTML]="translate.instant('IMPRESSUM_FOOTER')"></p>
 </div>

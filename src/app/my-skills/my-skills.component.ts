@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef } from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -8,13 +9,13 @@ gsap.registerPlugin(ScrollTrigger);
 @Component({
   selector: 'app-my-skills',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './my-skills.component.html',
   styleUrl: './my-skills.component.scss',
 })
 export class MySkillsComponent implements AfterViewInit {
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef, private translate: TranslateService) {}
 
   skills = [
     { img: './../../assets/img/Angular.png', name: 'Angular' },
@@ -32,6 +33,10 @@ export class MySkillsComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.animateMySkills();
     this.shakeEffect();
+  }
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
   }
 
   animateMySkills(): void {

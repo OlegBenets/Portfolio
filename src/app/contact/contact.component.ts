@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -9,16 +10,22 @@ gsap.registerPlugin(ScrollTrigger);
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, TranslateModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent implements AfterViewInit{
 
+  constructor(public translate: TranslateService) {}
+
   http = inject(HttpClient);
 
   ngAfterViewInit(): void {
     this.animateContact();
+  }
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
   }
 
   contactData = {
@@ -46,7 +53,6 @@ export class ContactComponent implements AfterViewInit{
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-
             ngForm.resetForm();
           },
           error: (error) => {
@@ -55,7 +61,6 @@ export class ContactComponent implements AfterViewInit{
           complete: () => console.info('send post complete'),
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-
       ngForm.resetForm();
     }
   }

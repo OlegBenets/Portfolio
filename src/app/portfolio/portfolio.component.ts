@@ -4,23 +4,31 @@ import { CommonModule } from '@angular/common';
 import { DataService } from '../shared/services/data.service';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [ProjectsComponent, CommonModule],
+  imports: [ProjectsComponent, CommonModule, TranslateModule],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent implements OnInit, AfterViewInit{
+
+  constructor(private translate: TranslateService) {}
+  
   projectsdata = inject(DataService)
 
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
     this.animateProjects();
+  }
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
   }
 
   animateProjects(): void {

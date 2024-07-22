@@ -1,14 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { gsap } from 'gsap';
 
 @Component({
   selector: 'app-above-the-fold',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './above-the-fold.component.html',
   styleUrl: './above-the-fold.component.scss'
 })
 export class AboveTheFoldComponent implements OnInit {
+
+  constructor(private translate: TranslateService) {}
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
 
   ngOnInit(): void {
     this.animateATF();

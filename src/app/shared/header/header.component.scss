@@ -34,8 +34,16 @@ header {
   }
 }
 
+.chosen-language {
+  color: $violet;
+}
+
 .links-translate-container {
   @include dFlex($jc: space-between, $ai: center, $g: 80px);
+
+  @media ( max-width: 920px) {
+    @include dFlex($jc: space-between, $ai: center, $g: 32px);
+  }
 
   .to-section-links {
     @include dFlex($ai: center, $g: 29px);
@@ -61,10 +69,6 @@ header {
 
   .translate-container {
     @include dFlex($jc: center, $ai: center, $g: 8px);
-    
-    @media ( max-width: 920px) {
-      display: none;
-    }
     
     .translate-button {
       background: none;

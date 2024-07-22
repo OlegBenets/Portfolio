@@ -243,21 +243,22 @@ input, textarea {
     }
   }
 
-  a {
-    text-decoration: none;
-    color: $violet;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
   span {
     font-size: 16px;
     font-weight: 400;
     color: white;
+
+    .privacy-policy {
+      text-decoration: none;
+      color: $violet;
+  
+      &:hover {
+        text-decoration: underline;
+    }
+  }
   }
 }
+
 
 .submit {
   @include dFlex($jc: center, $ai: center);

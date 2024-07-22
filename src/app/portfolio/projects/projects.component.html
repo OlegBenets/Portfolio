@@ -3,7 +3,7 @@
   <div class="description-project">
     <h4>{{project.name}}</h4>
     <h5>{{formatLanguages(project.language)}}</h5>
-    <span>{{project.description}}</span>
+    <span>{{project.description | translate}}</span>
     <div class="button-container">
       @if (project.liveUrl) {
         <a [href]="project.liveUrl" target="_blank" class="livetest-btn">Live test</a>

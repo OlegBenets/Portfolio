@@ -1,4 +1,5 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -7,11 +8,17 @@ gsap.registerPlugin(ScrollTrigger);
 @Component({
   selector: 'app-about-me',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss'
 })
 export class AboutMeComponent implements AfterViewInit {
+
+  constructor(private translate: TranslateService) {}
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
 
 
   ngAfterViewInit(): void {

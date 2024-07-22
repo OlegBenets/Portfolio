@@ -4,14 +4,14 @@
   </a>
   <div class="links-translate-container">
     <div class="to-section-links">
-      <a href="#about-me">About me</a>
-      <a href="#skills">Skills</a>
-      <a href="#portfolio">Portfolio</a>
+      <a href="#about-me">{{ 'ABOUT_ME' | translate }}</a>
+      <a href="#skills">{{ 'SKILLS' | translate }}</a>
+      <a href="#portfolio">{{ 'PORTFOLIO' | translate }}</a>
     </div>
     <div class="translate-container">
-        <button class="translate-button">de</button>
+        <button class="translate-button" (click)="switchLanguage('de')">de</button>
         <div class="border"></div>
-        <button class="translate-button">en</button>
+        <button class="translate-button" (click)="switchLanguage('en')">en</button>
     </div>
     <div class="burger-menu">
       <button (click)="toggleBurgerMenu()" class="burger-menu-btn">
@@ -23,10 +23,10 @@
 
 <div class="fullscreen-menu"[ngClass]="{'show': isBurgerMenuVisible}">
   <div class="to-section-links-mobile">
-    <a (click)="toggleBurgerMenu()" href="#about-me">About me</a>
-    <a (click)="toggleBurgerMenu()" href="#skills">Skills</a>
-    <a (click)="toggleBurgerMenu()" href="#portfolio">Portfolio</a>
-    <a (click)="toggleBurgerMenu()" href="#contact">Contact</a>
+    <a (click)="toggleBurgerMenu()" href="#about-me">{{ 'ABOUT_ME' | translate }}</a>
+    <a (click)="toggleBurgerMenu()" href="#skills">{{ 'SKILLS' | translate }}</a>
+    <a (click)="toggleBurgerMenu()" href="#portfolio">{{ 'PORTFOLIO' | translate }}</a>
+    <a (click)="toggleBurgerMenu()" href="#contact">{{ 'CONTACT' | translate }}</a>
   </div>
 </div>
 

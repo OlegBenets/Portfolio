@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { gsap } from 'gsap';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit{
-
   isBurgerMenuVisible: boolean = false;
   images: string[] = [
     './../../../assets/img/burger menu.png',
@@ -19,14 +19,17 @@ export class HeaderComponent implements OnInit{
     './../../../assets/img/Property 1=CLOSE FINAL.png'
   ];
   currentImage: string = this.images[0];
-
   animationInterval: any;
 
+  constructor(private translate: TranslateService) {}
 
   ngOnInit(): void {
     this.animateHeader();
   }
 
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
 
   animateHeader():void {
     const header = document.querySelector('header');
