@@ -29,6 +29,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit{
 
   switchLanguage(language: string) {
     this.translate.use(language);
+    localStorage.setItem('language', language);
   }
 
   animateProjects(): void {

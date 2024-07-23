@@ -6,8 +6,6 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class DataService {
 
-  currenLanguage: string = 'en';
-
   constructor(public translate: TranslateService) { 
     this.initializeTranslations();
     this.initializeLanguage();
@@ -22,9 +20,9 @@ export class DataService {
         FRONTEND_DEVELOPER: 'FRONTEND DEVELOPER',
         LETS_TALK: `Let's talk!`,
         SCROLL_DOWN: `Scroll down`,
-        ABOUT_ME_DESCRIPTION: 'Hi, I am a Front-end developer based in München, Germany.',
-        PERSONAL_SHARE_1: 'Some personal thing to share...',
-        PERSONAL_SHARE_2: 'Some personal thing to share...',
+        ABOUT_ME_DESCRIPTION: 'Hello and welcome! I’m Oleg, a Frontend Developer from Kulmbach, Bavaria. I’m passionate about solving complex problems and taking on new challenges in web development. It’s great to have you here!',
+        PERSONAL_SHARE_1: 'I love creating innovative and engaging digital experiences. The ever-changing field of programming keeps me inspired and excited about new possibilities.',
+        PERSONAL_SHARE_2: 'With a strong attention to detail and a knack for problem-solving, I’m ready to tackle any challenge. Feel free to explore my projects to see what I’ve been working on and how I can help with your next project.',
         MY_SKILLS: 'My skills',
         SKILLS_DESCRIPTION: 'I have gained experience in building projects with various front end technologies and concepts.',
         GET_IN_TOUCH: 'Get in touch',
@@ -63,9 +61,9 @@ export class DataService {
         FRONTEND_DEVELOPER: 'FRONTEND ENTWICKLER',
         LETS_TALK: `Lass uns sprechen!`,
         SCROLL_DOWN: `Runterscrollen`,
-        ABOUT_ME_DESCRIPTION: 'Hallo, ich bin ein Front-End-Entwickler aus München, Deutschland.',
-        PERSONAL_SHARE_1: 'Ein paar persönliche Dinge zu teilen...',
-        PERSONAL_SHARE_2: 'Ein paar persönliche Dinge zu teilen...',
+        ABOUT_ME_DESCRIPTION: 'Hallo und willkommen! Ich bin Oleg, ein Frontend-Entwickler aus Kulmbach, Bayern. Ich bin leidenschaftlich daran interessiert, komplexe Probleme zu lösen und neue Herausforderungen im Web Development anzunehmen. Schön, dass Sie hier sind!',
+        PERSONAL_SHARE_1: 'Ich liebe es, innovative und ansprechende digitale Erlebnisse zu schaffen. Das sich ständig weiterentwickelnde Feld der Programmierung inspiriert mich und hält mich für neue Möglichkeiten begeistert.',
+        PERSONAL_SHARE_2: 'Mit einer ausgeprägten Liebe zum Detail und einem Talent für Problemlösungen bin ich bereit, jede Herausforderung anzugehen. Schauen Sie sich gerne meine Projekte an, um zu sehen, woran ich gearbeitet habe und wie ich Ihnen bei Ihrem nächsten Projekt helfen kann.',
         MY_SKILLS: 'Meine Fähigkeiten',
         SKILLS_DESCRIPTION: 'Ich habe Erfahrung im Aufbau von Projekten mit verschiedenen Front-End-Technologien und -Konzepten.',
         GET_IN_TOUCH: 'Kontakt aufnehmen',
@@ -98,15 +96,13 @@ export class DataService {
 
 
     private initializeLanguage() {
-      let savedLanguage = localStorage.getItem('language');
-      this.currenLanguage = savedLanguage || 'en';
-      this.translate.setDefaultLang(this.currenLanguage);
-      this.translate.use(this.currenLanguage);
+      let savedLanguage = localStorage.getItem('language') || 'en';
+      this.translate.setDefaultLang(savedLanguage);
+      this.translate.use(savedLanguage);
     }
 
   switchLanguage(language: string) {
-    this.currenLanguage = language;
-    this.translate.use(this.currenLanguage);
+    this.translate.use(language);
     localStorage.setItem('language', language);
   }
   

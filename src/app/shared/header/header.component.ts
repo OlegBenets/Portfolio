@@ -29,6 +29,7 @@ export class HeaderComponent implements OnInit{
 
   switchLanguage(language: string) {
     this.translate.use(language);
+    localStorage.setItem('language', language);
   }
 
   animateHeader():void {

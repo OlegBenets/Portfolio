@@ -26,6 +26,7 @@ export class ContactComponent implements AfterViewInit{
 
   switchLanguage(language: string) {
     this.translate.use(language);
+    localStorage.setItem('language', language);
   }
 
   contactData = {

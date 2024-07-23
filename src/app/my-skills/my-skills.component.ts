@@ -37,6 +37,7 @@ export class MySkillsComponent implements AfterViewInit {
 
   switchLanguage(language: string) {
     this.translate.use(language);
+    localStorage.setItem('language', language);
   }
 
   animateMySkills(): void {

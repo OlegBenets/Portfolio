@@ -14,22 +14,28 @@ header {
   padding: 37px 100px;
   background-color: $dark_blue;
   z-index: 100;
+  overflow: hidden;
 
   @media ( max-width: 920px) {
     width: calc(100% - 80px);
     padding: 37px 40px;
   }
 
-  .back-to-aot {
-    text-decoration: none;
+  @media ( max-width: 450px) {
+    width: calc(100% - 30px);
+    height: calc(110px - 56px);
+    padding: 28px 15px;
   }
 
-  h3 {
-    margin: 0;
-    color: white;
-    font-size: 40px;
-    span {
-        color: $green;
+  .back-to-aot {
+    text-decoration: none;
+
+    img {
+      height: 150px;
+
+      @media ( max-width: 450px) {
+        height: 100px;
+      }
     }
   }
 }
@@ -43,6 +49,10 @@ header {
 
   @media ( max-width: 920px) {
     @include dFlex($jc: space-between, $ai: center, $g: 32px);
+  }
+
+  @media ( max-width: 450px) {
+    @include dFlex($jc: space-between, $ai: center, $g: 16px);
   }
 
   .to-section-links {
@@ -69,6 +79,10 @@ header {
 
   .translate-container {
     @include dFlex($jc: center, $ai: center, $g: 8px);
+
+    @media ( max-width: 450px) {
+      @include dFlex($jc: center, $ai: center, $g: 3px);
+    }
     
     .translate-button {
       background: none;
@@ -103,9 +117,21 @@ header {
       &:hover {
         cursor: pointer;
       } 
+
+      .burger-menu-img {
+        width: 35px;
+        height: 35px;
+
+        @media ( max-width: 450px) {
+          width: 28px;
+          height: 28px;
+        }
+      }
     }
   }
 }
+
+
 
 .fullscreen-menu {
   position: fixed;

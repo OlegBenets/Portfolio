@@ -7,7 +7,7 @@
     height: auto;
     padding-top: 200px;
 
-    @media ( max-width: 920px) {
+    @media ( max-width: 1200px) {
         @include dFlex($jc: space-between, $ai: center, $g: 50px);
         flex-direction: column-reverse;
         padding-top: 100px;
@@ -31,16 +31,16 @@
     margin-left: 100px;
     z-index: 1;
   
-    @media (max-width: 920px) {
+    @media (max-width: 1200px) {
       margin-left: 0px;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(4, auto);
       gap: 12px;
-  
-      &:nth-child(12) {
-        grid-column: 2 / 3;
-      }
     }
+
+    @media (max-width: 650px) {
+        width: 90%;
+      }
 
     div {
         @include dFlex($jc: center, $ai: center, $g: 16px);
@@ -50,6 +50,10 @@
         .skills-icons {
             width: 60px;
             height: auto;
+
+            @media ( max-width: 650px) {
+                width: 32px;
+            }
 
             &:hover {
                 cursor: pointer;
@@ -61,6 +65,11 @@
             font-weight: 700;
             color: white;
             transition: transform 175ms ease-in-out;
+
+            @media ( max-width: 650px) {
+                font-size: 14px;
+                font-weight: 500;
+            }
 
             &:hover {
                 cursor: pointer;
@@ -78,7 +87,7 @@
     height: 300px;
     margin-right: 100px;
 
-    @media ( max-width: 920px) {
+    @media ( max-width: 1200px) {
         @include dFlex($jc: center, $ai: center, $g: 12px);
         text-align: center;
         margin-right: 0px;
@@ -89,9 +98,18 @@
         font-weight: 700;
         color: white;
         margin: 0;
+        text-wrap: nowrap;
 
-        @media ( max-width: 920px) {
+        @media ( max-width: 1200px) {
             font-size: 74px;
+          }
+        
+          @media ( max-width: 650px) {
+            font-size: 56px;
+          }
+        
+          @media ( max-width: 400px) {
+            font-size: 48px;
           }
     }
 
@@ -101,14 +119,18 @@
         color: white;
         text-align: end;
 
-        @media ( max-width: 920px) {
+        @media ( max-width: 1200px) {
             text-align: center;
+          }
+
+        @media ( max-width: 650px) {
+        font-size: 14px;
           }
     }
 
     .to-contact {
         @include dFlex($jc: center, $ai: center);
-        width: calc(200px - 60px);
+        width: calc(auto - 60px);
         height: calc(58px - 30px);
         border: none;
         border-radius: 10px;
@@ -119,5 +141,13 @@
         color: white;
         text-decoration: none;
         z-index: 1000;
+        text-wrap: nowrap;
+
+        @media ( max-width: 650px) {
+            width: calc(auto - 16px);
+            height: calc(58px - 16px);
+            padding: 8px;
+            font-size: 18px;
+      }
     }
 }

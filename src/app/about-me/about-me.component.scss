@@ -9,9 +9,14 @@
   padding-top: 200px;
   z-index: 3;
 
-  @media ( max-width: 920px) {
+  @media ( max-width: 1200px) {
     @include dFlex($jc: center, $ai: center);
     padding-top: 100px;
+    gap: 120px;
+  }
+
+  @media ( max-width: 920px) {
+    @include dFlex($jc: flex-start, $ai: center);
   }
 }
 
@@ -20,9 +25,18 @@ h2 {
   font-weight: 700;
   color: white;
   margin: 0;
+  white-space: nowrap;
   
-  @media ( max-width: 920px) {
+  @media ( max-width: 1200px) {
     font-size: 74px;
+  }
+
+  @media ( max-width: 650px) {
+    font-size: 56px;
+  }
+
+  @media ( max-width: 400px) {
+    font-size: 48px;
   }
 }
 
@@ -33,14 +47,19 @@ h2 {
   height: auto;
   margin-left: 100px;
 
-  @media ( max-width: 920px) {
-    margin-left: 0px;
+  @media ( max-width: 650px) {
+    margin-left: 25px;
+    margin-right: 25px;
   }
 
   .introduce {
     font-size: 16px;
     font-weight: 400;
     color: white;
+
+    @media ( max-width: 650px) {
+      font-size: 14px;
+    }
   }
 }
 
@@ -52,6 +71,10 @@ h2 {
     width: 50px;
     height: auto;
     transition: transform 175ms ease-in-out;
+
+    @media ( max-width: 650px) {
+      width: 32px;
+    }
     
     &:hover {
       cursor: pointer;
@@ -62,6 +85,10 @@ h2 {
     font-size: 16px;
     font-weight: 400;
     color: white;
+
+    @media ( max-width: 650px) {
+      font-size: 14px;
+    }
   }
 }
 
@@ -85,6 +112,11 @@ h2 {
     border: 2px solid $green;
     border-radius: 50%;
     overflow: hidden;
+
+    @media ( max-width: 1200px) {
+      width: 350px;
+      height: 350px;
+    }
 
     img {
         width: 100%;

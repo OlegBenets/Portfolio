@@ -19,18 +19,14 @@ import { DataService } from './shared/services/data.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  title = 'Oleg Benets - Portfolio';
 
   constructor(public translate: DataService){}
 
-  title = 'Oleg Benets - Portfolio';
-
-  currentLanguage: string = 'en';
-
-  ngOnInit() {
-    this.switchLanguage(this.currentLanguage);
-  }
+  ngOnInit() {}
 
   switchLanguage(language: string) {
     this.translate.switchLanguage(language);
+    localStorage.setItem('language', language);
   }
 }

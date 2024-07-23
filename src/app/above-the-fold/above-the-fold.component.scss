@@ -2,13 +2,12 @@
 
 .aot-container {
     @include position($p: relative, $t: 0px);
-    @include dFlex($jc: center, $ai: flex-start);
     width: 100%;
     height: 100vh;
     padding-top: 200px;
     background-color: $dark_blue;
 
-    @media ( max-width: 920px) {
+    @media ( max-width: 1200px) {
       padding-top: 100px;
     }
   }
@@ -27,6 +26,10 @@ h1 {
   font-weight: 700;
   color: white;
   text-wrap: nowrap;
+
+  @media ( max-width: 460px) {
+    font-size: clamp(2rem, 5vw, 4rem);
+  }
 }
 
 h3 {
@@ -35,19 +38,23 @@ h3 {
   font-weight: 400;
   color: $violet;
   text-wrap: nowrap;
+
+  @media ( max-width: 460px) {
+    font-size: clamp(1rem, 5vw, 3rem);
+  }
 }
 
 .img-introduce-container {
   @include dFlex($jc: space-between, $ai: center);
   width: 90%;
 
-  @media ( max-width: 920px) {
+  @media ( max-width: 1200px) {
     flex-direction: column;
   }
 
   .profile-img {
-    width: 50%;
-    max-width: 646px;
+    @include position($t: 150px, $l: 100px);
+    width: 646px;
     height: auto;
     background-image: url(../../assets/img/photo\ shadows.png);
     background-position: center;
@@ -56,35 +63,73 @@ h3 {
     overflow: hidden;
     z-index: 1;
 
-    @media ( max-width: 920px) {
-      width: 65%;
+    @media ( max-width: 1200px) {
+      @include position($t: 150px, $l: 50px);
+      width: 480px;
     }
-  }
 
-  .background-line {
-    @include position($t: 22%, $l: 0);
-    width: 100%;
-    height: auto;
-    z-index: 2;
+    @media ( max-width: 900px) {
+      @include position($t: 100px, $l: 50%);
+      transform: translateX(-50%);
+      width: 450px;
+    }
 
-    @media ( max-width: 920px) {
-      @include position($t: 37%, $l: 0);
-      content: url('./../../assets/img/Vector\ \(14\).png');
+    @media ( max-width: 460px) {
+      @include position($t: 150px, $l: 50%);
+      width: 300px;
     }
   }
 }
 
+  .background-line {
+    @include position($t: 280px, $l: 0);
+    width: 100%;
+    height: auto;
+    z-index: 2;
+
+    @media ( max-width: 1600px) {
+      @include position($t: 380px, $l: 0);
+    }
+
+    @media ( max-width: 1200px) {
+      @include position($t: 520px, $l: 0);
+      content: url('./../../assets/img/Vector\ \(14\).png');
+    }
+
+    @media ( max-width: 900px) {
+      @include position($t: 480px, $l: 0);
+    }
+
+    @media ( max-width: 460px) {
+      @include position($t: 420px, $l: 0);
+  }
+}
+
 .introduce-btn-container {
+  @include position($t: 40%, $l: none);
+  right: 100px;
   @include dFlex( $jc:center, $ai:center, $g: 42px);
   flex-direction: column;
+  max-width: 800px;
   width: 50%;
-  max-width: 720px;
+  transform: translateY(-40%);
   height: auto;
   z-index: 3;
 
-  @media ( max-width: 920px) {
+  @media ( max-width: 1200px) {
     @include dFlex( $jc:center, $ai:center, $g: 12px);
+    right: 50px;
   }
+
+  @media ( max-width: 900px) {
+    @include position($t: 650px, $l: none);
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  @media ( max-width: 460px) {
+    @include position($t: 500px, $l: none);
+}
 }
 
 
@@ -94,7 +139,7 @@ h3 {
     max-width: 720px;
     height: 170px;
     
-    @media ( max-width: 920px) {
+    @media ( max-width: 1200px) {
       height: auto;
     }
     
@@ -104,8 +149,12 @@ h3 {
         transform: rotate(-90deg);
         font-size: clamp(2rem, 4vw, 4rem);
         font-weight: 400;
-        color: white
-    };
+        color: white;
+
+        @media ( max-width: 460px) {
+          font-size: clamp(1rem, 5vw, 3rem);
+        }
+    }
 }
 
 .name {
@@ -115,7 +164,7 @@ h3 {
 
 .lets-talk-button {
   @include dFlex($jc: center, $ai: center);
-    width: calc(165px - 60px);
+    width: calc(auto - 60px);
     height: calc(58px - 30px);
     border: none;
     border-radius: 10px;
@@ -125,24 +174,30 @@ h3 {
     background-color: $green;
     color: white;
     text-decoration: none;
+
+    @media ( max-width: 460px) {
+      width: calc(auto - 32px);
+      height: calc(58px - 16px);
+      padding: 8px 16px;
+      font-size: 18px;
+    }
 }
 
 .social-links {
   @include position($t: 903px, $l: 0px);
   @include dFlex($jc: flex-end, $ai: center, $g: 42px);
-  width: 50%;
+  width: 60%;
   height: 40px;
   z-index: 4;
 
-  @media ( max-width: 920px) {
+  @media ( max-width: 1200px) {
     width: 90%;
     gap: 24px;
   }
 
   @media ( max-width: 600px) {
-    @include position($t: 80%, $l: 0px);
-    width: 100%;
-    gap: 18px;
+    width: 95%;
+    gap: 12px;
   }
 
   .purple-line {
@@ -160,7 +215,7 @@ h3 {
       width: 30px;
       height: 30px;
       transition: transform 175ms ease-in-out;
-      @media ( max-width: 920px) {
+      @media ( max-width: 1200px) {
         width: 20px;
         height: 20px;
       }
@@ -177,8 +232,12 @@ h3 {
     font-size: 24px;
     font-weight: 400;
 
-    @media ( max-width: 920px) {
+    @media ( max-width: 1200px) {
       font-size: 18px;
+    }
+
+    @media ( max-width: 460px) {
+      font-size: 16px;
     }
 
     &:hover {
@@ -196,7 +255,7 @@ h3 {
   transform: rotate(90deg);
   z-index: 4;
   
-  @media ( max-width: 600px) {
+  @media ( max-width: 650px) {
     display: none;
   }
   

@@ -59,6 +59,10 @@
   .purple-line {
     width: 50px;
     border: 3px solid $violet;
+
+    @media ( max-width: 400px) {
+      width: 25px;
+    }
   }
 
   h2 {
@@ -67,8 +71,16 @@
     color: white;
     margin: 0;
 
-    @media (max-width: 920px) {
+    @media ( max-width: 1200px) {
       font-size: 74px;
+    }
+  
+    @media ( max-width: 650px) {
+      font-size: 56px;
+    }
+  
+    @media ( max-width: 400px) {
+      font-size: 48px;
     }
 }
 }
@@ -84,19 +96,32 @@
     flex-direction: column;
     margin: 200px 20px 0 20px;
   }
+
+  @media ( max-width: 650px) {
+    margin: 200px 10px 0 10px;
+  }
 }
 
 .description {
   @include dFlex($jc: flex-start, $ai: flex-start, $g: 32px);
   flex-direction: column;
   width: 500px;
+  height: auto;
   z-index: 1;
+
+  @media ( max-width: 650px) {
+    width: 90%;
+  }
 
   h4 {
     font-size: 32px;
     font-weight: 700;
     color: white;
     margin: 0;
+
+    @media ( max-width: 650px) {
+      font-size: 28px;
+    }
   }
 
   span {
@@ -104,6 +129,10 @@
     font-weight: 400;
     color: white;
     margin: 0;
+
+    @media ( max-width: 650px) {
+      font-size: 14px;
+    }
   }
 }
 
@@ -119,6 +148,7 @@ form {
     @include dFlex($jc: space-between, $ai: center, $g: 16px);
     flex-direction: column;
   }
+
 
 .input-wrapper {
   position: relative;
@@ -206,6 +236,10 @@ input, textarea {
   width: 100%;
   height: auto;
 
+  @media ( max-width: 650px) {
+    @include dFlex($jc: flex-start, $ai: center, $g: 12px);
+  }
+
   .checkbox {
     display: none;
 
@@ -248,6 +282,10 @@ input, textarea {
     font-weight: 400;
     color: white;
 
+    @media ( max-width: 650px) {
+      font-size: 14px;
+    }
+
     .privacy-policy {
       text-decoration: none;
       color: $violet;
@@ -270,6 +308,13 @@ input, textarea {
   background-color: $green !important;
   color: white;
   font-size: 20px;
+
+  @media ( max-width: 650px) {
+    width: 160px;
+    height: 50px;
+    padding: 8px;
+    font-size: 18px;
+  }
 
   &:disabled {
     background-color: rgba($color: grey, $alpha: 0.5) !important;

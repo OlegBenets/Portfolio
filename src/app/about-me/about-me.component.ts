@@ -18,6 +18,7 @@ export class AboutMeComponent implements AfterViewInit {
 
   switchLanguage(language: string) {
     this.translate.use(language);
+    localStorage.setItem('language', language);
   }
 
 

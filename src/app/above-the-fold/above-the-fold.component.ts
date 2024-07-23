@@ -15,6 +15,7 @@ export class AboveTheFoldComponent implements OnInit {
 
   switchLanguage(language: string) {
     this.translate.use(language);
+    localStorage.setItem('language', language);
   }
 
   ngOnInit(): void {

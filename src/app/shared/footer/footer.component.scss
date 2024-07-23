@@ -16,16 +16,30 @@ footer {
         height: 300px;
     }
 
+    @media ( max-width: 650px) {
+        @include dFlex($jc: center, $ai: center, $g: 24px);
+        width: calc(100% - 32px);
+        padding: 16px;
+    }
+
     .copyright {
         font-size: 24px;
         font-weight: 400;
         color: white;
+
+        @media ( max-width: 650px) {
+            font-size: 20px;
+        }
     }
 }
 
 .back-to-aot {
     text-decoration: none;
     scroll-behavior: smooth;
+
+    img {
+        height: 120px;
+    }
   }
 
 .headline-container {
@@ -34,6 +48,10 @@ footer {
 
     @media ( max-width: 920px) {
         @include dFlex($jc: center, $ai: center, $g: 12px);
+    }
+
+    @media ( max-width: 650px) {
+        @include dFlex($jc: center, $ai: center, $g: 0px);
     }
 
     .imprint {
@@ -46,15 +64,6 @@ footer {
             text-decoration: underline;
         }
     }
-
-    h3 {
-        margin: 0;
-        color: white;
-        font-size: 40px;
-        span {
-            color: $green;
-        }
-      }
 }
 
 .icon-container {
@@ -67,6 +76,11 @@ footer {
     width: 30px;
     height: 30px;
     transition: transform 175ms ease-in-out;
+
+    @media ( max-width: 650px) {
+        width: 20px;
+        height: 20px;
+    }
 
     &:hover {
         cursor: pointer;

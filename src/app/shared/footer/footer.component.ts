@@ -15,6 +15,7 @@ export class FooterComponent {
 
   switchLanguage(language: string) {
     this.translate.use(language);
+    localStorage.setItem('language', language);
   }
 
 }
