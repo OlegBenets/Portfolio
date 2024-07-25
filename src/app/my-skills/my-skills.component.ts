@@ -14,9 +14,18 @@ gsap.registerPlugin(ScrollTrigger);
   styleUrl: './my-skills.component.scss',
 })
 export class MySkillsComponent implements AfterViewInit {
-
+    
+  /**
+   * Creates an instance of MySkillsComponent.
+   * 
+   * @param elementRef - The reference to the component's DOM element.
+   * @param translate - The TranslateService for internationalization.
+   */
   constructor(private elementRef: ElementRef, private translate: TranslateService) {}
 
+  /**
+   * The list of skills to be displayed in the 'My Skills' section.
+   */
   skills = [
     { img: './../../assets/img/Angular.png', name: 'Angular' },
     { img: './../../assets/img/Type-script.png', name: 'TypeScript' },
@@ -30,66 +39,82 @@ export class MySkillsComponent implements AfterViewInit {
     { img: './../../assets/img/material-design.png', name: 'Material Design' },
   ];
 
+  /**
+   * Lifecycle hook that is called after the component's view has been fully initialized.
+   * 
+   * Initializes the animations for the 'My Skills' section.
+   */
   ngAfterViewInit(): void {
     this.animateMySkills();
     this.shakeEffect();
   }
 
+  /**
+   * Switches the application language.
+   * 
+   * @param language - The language code to switch to.
+   */
   switchLanguage(language: string) {
     this.translate.use(language);
     localStorage.setItem('language', language);
   }
 
+  /**
+   * Animates elements in the 'My Skills' section using GSAP.
+   * 
+   * Animates the description and skills icons with scroll-triggered animations.
+   */
   animateMySkills(): void {
-    let description = document.querySelectorAll('.description-my-skills');
-    let skills = document.querySelectorAll('.skills-icons-container');
-
-    gsap.fromTo(
-      skills,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: skills,
-          start: 'top 60%',
-          end: 'top 40%',
-          scrub: true,
-        },
-        duration: 1,
-      }
-    );
-
-    gsap.fromTo(
-      description,
-      { x: '100%', opacity: 0 },
-      {
-        opacity: 1,
-        x: '0%',
-        scrollTrigger: {
-          trigger: description,
-          start: 'top 99%',
-          end: 'top 50%',
-          scrub: true,
-        },
-        duration: 1,
-      }
-    );
+    this.setupAnimation('.skills-icons-container', { opacity: 0 }, { opacity: 1 }, 'top 60%', 'top 40%');
+    this.setupAnimation('.description-my-skills', { x: '100%', opacity: 0 }, { x: '0%', opacity: 1 }, 'top 99%', 'top 50%');
   }
-
+  
+  /**
+   * Helper function to set up GSAP animation.
+   * 
+   * @param selector - The CSS selector for the elements to animate.
+   * @param fromVars - The starting properties for the animation.
+   * @param toVars - The ending properties for the animation.
+   * @param start - The start position for the scroll trigger.
+   * @param end - The end position for the scroll trigger.
+   */
+  setupAnimation(selector: string, fromVars: gsap.TweenVars, toVars: gsap.TweenVars, start: string, end: string): void {
+    const elements = document.querySelectorAll(selector);
+    gsap.fromTo(elements, fromVars, {
+      ...toVars,
+      scrollTrigger: {
+        trigger: elements,
+        start: start,
+        end: end,
+        scrub: true,
+      },
+      duration: 1,
+    });
+  }
+  
+  /**
+   * Adds a shake effect to skill icons on mouse enter and stop the effect on mouse leave.
+   */
   shakeEffect(): void {
-    let elements = this.elementRef.nativeElement.querySelectorAll('.skills-icons');
+    let elements =
+      this.elementRef.nativeElement.querySelectorAll('.skills-icons');
 
     elements.forEach((element: HTMLElement) => {
       element.addEventListener('mouseenter', () => {
         this.animateElement(element);
       });
       element.addEventListener('mouseleave', () => {
-        gsap.killTweensOf(element); // Stop all played Animations for this Element
-        gsap.to(element, {x: 0, y: 0}); 
+        gsap.killTweensOf(element);
+        gsap.to(element, { x: 0, y: 0 });
       });
     });
   }
 
+  /**
+   * Animates the given element with a shaking effect.
+   * 
+   * @param element - The element to animate.
+   */
   animateElement(element: HTMLElement): void {
     gsap.to(element, {
       duration: 0.1,
@@ -99,5 +124,4 @@ export class MySkillsComponent implements AfterViewInit {
       ease: 'power1.inOut',
     });
   }
-
 }

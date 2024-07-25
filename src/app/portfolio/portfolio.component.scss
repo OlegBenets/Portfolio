@@ -1,117 +1,117 @@
 @import "./../../styles.scss";
 
 .portfolio-container {
-    @include position($p: relative, $t: 0px);
-    @include dFlex($jc: flex-start, $ai: center, $g: 36px);
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    padding-top: 200px;
+  @include position($p: relative, $t: 0px);
+  @include dFlex($jc: flex-start, $ai: center, $g: 36px);
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding-top: 200px;
 
-    @media ( max-width: 1200px) {
+  @media (max-width: 1200px) {
     padding-top: 100px;
-      }
+  }
 
-    .purple-shadow {
-        @include position($t: 65%, $l: 0);
-        width: 630px;
-        height: auto;
+  .purple-shadow {
+    @include position($t: 65%, $l: 0);
+    width: 630px;
+    height: auto;
 
-        @media ( max-width: 1200px) {
-            @include position($t: 70%, $l: 0);
-            width: 330px;
-        }
+    @media (max-width: 1200px) {
+      @include position($t: 70%, $l: 0);
+      width: 330px;
     }
+  }
 
-    .green-shadow {
-        @include position($t: 65%, $l: none);
-        right: 0;
-        width: 400px;
-        height: auto;
+  .green-shadow {
+    @include position($t: 65%, $l: none);
+    right: 0;
+    width: 400px;
+    height: auto;
 
-        @media ( max-width: 1200px) {
-            width: 200px;
-        }
+    @media (max-width: 1200px) {
+      width: 200px;
     }
+  }
 }
 
 .single-project {
-    @include dFlex($jc: center, $ai: center, $g: 35px);
-    width: 80%;
-    height: 500px;
-    margin: 0 auto;
+  @include dFlex($jc: center, $ai: center, $g: 35px);
+  width: 80%;
+  height: 500px;
+  margin: 0 auto;
 
-    @media ( max-width: 1200px) {
-        @include dFlex($jc: center, $ai: center, $g: 12px);
-        flex-direction: column;
-        width: 100%;
-        height: auto;
-      }
+  @media (max-width: 1200px) {
+    @include dFlex($jc: center, $ai: center, $g: 12px);
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .portfolio-headline {
-    @include dFlex($jc: flex-end, $ai: center, $g: 16px);
-    width: 100%;
-    height: auto;
-    z-index: 1;
+  @include dFlex($jc: flex-end, $ai: center, $g: 16px);
+  width: 100%;
+  height: auto;
+  z-index: 1;
 
-    h2 {
-        width: 400px;
-        font-size: 90px;
-        font-weight: 700;
-        color: white;
-        margin: 0;
+  h2 {
+    width: 400px;
+    font-size: 90px;
+    font-weight: 700;
+    color: white;
+    margin: 0;
 
-        @media ( max-width: 1200px) {
-            font-size: 74px;
-          }
-        
-          @media ( max-width: 650px) {
-            font-size: 56px;
-          }
-        
-          @media ( max-width: 400px) {
-            font-size: 48px;
-          }
+    @media (max-width: 1200px) {
+      font-size: 74px;
     }
 
-    .purple-line {
-        width: 100px;
-        border: 3px solid $violet;
+    @media (max-width: 650px) {
+      font-size: 56px;
     }
 
-    .purple-line-long {
-        width: 50%;
-        border: 3px solid $violet;
+    @media (max-width: 400px) {
+      font-size: 48px;
     }
+  }
+
+  .purple-line {
+    width: 100px;
+    border: 3px solid $violet;
+  }
+
+  .purple-line-long {
+    width: 50%;
+    border: 3px solid $violet;
+  }
 }
 
 .description {
-    font-size: 16px;
-    font-weight: 400;
-    color: white;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
 
-    @media ( max-width: 650px) {
-        text-align: center;
-      }
+  @media (max-width: 650px) {
+    text-align: center;
+  }
 }
 
 .project-container {
-    @include dFlex($jc: center, $ai: center, $g: 100px);
-    flex-direction: column;
-    width: 100%;
-    margin-top: 100px;
-    z-index: 5;
+  @include dFlex($jc: center, $ai: center, $g: 100px);
+  flex-direction: column;
+  width: 100%;
+  margin-top: 100px;
+  z-index: 5;
 
-    @media ( max-width: 1200px) {
-        margin-top: 0px;
-      }
+  @media (max-width: 1200px) {
+    margin-top: 0px;
+  }
 }
 
 .reversed {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 
-    @media ( max-width: 1200px) {
-        flex-direction: column;
-      }
+  @media (max-width: 1200px) {
+    flex-direction: column;
   }
+}

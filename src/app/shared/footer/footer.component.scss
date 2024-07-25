@@ -1,89 +1,88 @@
 @import "./../../../styles.scss";
 
 footer {
-    @include dFlex($jc: space-between, $ai: center);
-    width: calc(100% - 200px);
-    height: calc(180px - 32px);
-    padding: 16px 100px;
-    border-top: 4px solid $green;
-    background-color: $dark_blue;
-    z-index: 100;
+  @include dFlex($jc: space-between, $ai: center);
+  width: calc(100% - 200px);
+  height: calc(180px - 32px);
+  padding: 16px 100px;
+  border-top: 4px solid $green;
+  background-color: $dark_blue;
+  z-index: 100;
 
-    @media ( max-width: 920px) {
-        @include dFlex($jc: center, $ai: center, $g: 32px);
-        flex-direction: column;
-        min-height: 180px;
-        height: 300px;
+  @media (max-width: 920px) {
+    @include dFlex($jc: center, $ai: center, $g: 32px);
+    flex-direction: column;
+    min-height: 180px;
+    height: 300px;
+  }
+
+  @media (max-width: 650px) {
+    @include dFlex($jc: center, $ai: center, $g: 24px);
+    width: calc(100% - 32px);
+    padding: 16px;
+  }
+
+  .copyright {
+    font-size: 24px;
+    font-weight: 400;
+    color: white;
+
+    @media (max-width: 650px) {
+      font-size: 20px;
     }
-
-    @media ( max-width: 650px) {
-        @include dFlex($jc: center, $ai: center, $g: 24px);
-        width: calc(100% - 32px);
-        padding: 16px;
-    }
-
-    .copyright {
-        font-size: 24px;
-        font-weight: 400;
-        color: white;
-
-        @media ( max-width: 650px) {
-            font-size: 20px;
-        }
-    }
+  }
 }
 
 .back-to-aot {
-    text-decoration: none;
-    scroll-behavior: smooth;
+  text-decoration: none;
+  scroll-behavior: smooth;
 
-    img {
-        height: 120px;
-    }
+  img {
+    height: 120px;
   }
+}
 
 .headline-container {
-    @include dFlex($jc: center, $ai: flex-start, $g: 4px);
-    flex-direction: column;
+  @include dFlex($jc: center, $ai: flex-start, $g: 4px);
+  flex-direction: column;
 
-    @media ( max-width: 920px) {
-        @include dFlex($jc: center, $ai: center, $g: 12px);
+  @media (max-width: 920px) {
+    @include dFlex($jc: center, $ai: center, $g: 12px);
+  }
+
+  @media (max-width: 650px) {
+    @include dFlex($jc: center, $ai: center, $g: 0px);
+  }
+
+  .imprint {
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
     }
-
-    @media ( max-width: 650px) {
-        @include dFlex($jc: center, $ai: center, $g: 0px);
-    }
-
-    .imprint {
-        font-size: 16px;
-        font-weight: 400;
-        color: white;
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
+  }
 }
 
 .icon-container {
-    @include dFlex($jc: space-between, $ai: center, $g: 42px);
+  @include dFlex($jc: space-between, $ai: center, $g: 42px);
 }
 
-
 .icon-link {
-    text-decoration: none;
-    width: 30px;
-    height: 30px;
-    transition: transform 175ms ease-in-out;
+  text-decoration: none;
+  width: 30px;
+  height: 30px;
+  transition: transform 175ms ease-in-out;
 
-    @media ( max-width: 650px) {
-        width: 20px;
-        height: 20px;
-    }
+  @media (max-width: 650px) {
+    width: 20px;
+    height: 20px;
+  }
 
-    &:hover {
-        cursor: pointer;
-        transform: scale(1.3);
-    }
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+  }
 }

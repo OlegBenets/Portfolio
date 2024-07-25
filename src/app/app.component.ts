@@ -10,21 +10,34 @@ import { DataService } from './shared/services/data.service';
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule, 
+    CommonModule,
     RouterOutlet,
     FooterComponent,
     HeaderComponent,
-    MainContentComponent],
+    MainContentComponent,
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
+
+  /**
+   * The title of the application.
+   * @type {string}
+   */
   title = 'Oleg Benets - Portfolio';
 
-  constructor(public translate: DataService){}
+  /**
+   * Creates an instance of AppComponent.
+   * @param {DataService} translate - The service used for managing translations.
+   */
+  constructor(public translate: DataService) {}
 
-  ngOnInit() {}
-
+  /**
+   * Switches the language for the application.
+   * This method updates the language using the DataService and saves the selected language in local storage.
+   * @param {string} language - The language code to switch to (e.g., 'en' or 'de').
+   */
   switchLanguage(language: string) {
     this.translate.switchLanguage(language);
     localStorage.setItem('language', language);

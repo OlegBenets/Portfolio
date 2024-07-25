@@ -1,16 +1,18 @@
 <div class="my-skills-container">
-    <img class="green-shadow" src="./../../assets/img/Green shadow 2.png">
-    <div class="skills-icons-container">
-        @for (skill of skills; track skill.name; let i = $index) {
-            <div>
-                <img class="skills-icons" [src]="skill.img" [alt]="skill.name">
-                <span>{{skill.name}}</span>
-            </div>
-        }
+  <img class="green-shadow" src="./../../assets/img/Green shadow 2.png" />
+  <div class="skills-icons-container">
+    @for (skill of skills; track skill.name; let i = $index) {
+    <div>
+      <img class="skills-icons" [src]="skill.img" [alt]="skill.name" />
+      <span>{{ skill.name }}</span>
     </div>
-    <div class="description-my-skills">
-        <h2>{{ 'MY_SKILLS' | translate }}</h2>
-        <span>{{ 'SKILLS_DESCRIPTION' | translate }}</span>
-        <a href="#contact" class="to-contact green-button">{{ 'GET_IN_TOUCH' | translate }}</a>
-    </div>
+    }
+  </div>
+  <div class="description-my-skills">
+    <h2>{{ "MY_SKILLS" | translate }}</h2>
+    <span>{{ "SKILLS_DESCRIPTION" | translate }}</span>
+    <a href="#contact" class="to-contact green-button">{{
+      "GET_IN_TOUCH" | translate
+    }}</a>
+  </div>
 </div>

@@ -1,16 +1,19 @@
-
-  <img class="project-img" src="./../../../assets/img/{{ project.img }}" alt="{{ project.name }}" />
-  <div class="description-project">
-    <h4>{{project.name}}</h4>
-    <h5>{{formatLanguages(project.language)}}</h5>
-    <span>{{project.description | translate}}</span>
-    <div class="button-container">
-      @if (project.liveUrl) {
-        <a [href]="project.liveUrl" target="_blank" class="livetest-btn">Live test</a>
-      }
-
-      @if (project.githubUrl) {
-        <a [href]="project.githubUrl" target="_blank" class="github-btn">Github</a>
-      }
-    </div>
+<img
+  class="project-img"
+  src="./../../../assets/img/{{ project.img }}"
+  alt="{{ project.name }}"
+/>
+<div class="description-project">
+  <h4>{{ project.name }}</h4>
+  <h5>{{ formatLanguages(project.language) }}</h5>
+  <span>{{ project.description | translate }}</span>
+  <div class="button-container">
+    @if (project.liveUrl) {
+    <a [href]="project.liveUrl" target="_blank" class="livetest-btn"
+      >Live test</a
+    >
+    } @if (project.githubUrl) {
+    <a [href]="project.githubUrl" target="_blank" class="github-btn">Github</a>
+    }
   </div>
+</div>

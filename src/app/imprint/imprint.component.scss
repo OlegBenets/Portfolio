@@ -1,64 +1,63 @@
-@import './../../styles.scss';
+@import "./../../styles.scss";
 
 .imprint-container {
-    width: calc(100% - 200px);
-    min-height: 80vh;
-    height: auto;
-    color: white;
-    padding: 200px 100px;
+  width: calc(100% - 200px);
+  min-height: 80vh;
+  height: auto;
+  color: white;
+  padding: 200px 100px;
 
-    @media ( max-width: 920px) {
-        padding: 200px 50px;
-        width: calc(100% - 100px);
-      }
+  @media (max-width: 920px) {
+    padding: 200px 50px;
+    width: calc(100% - 100px);
+  }
 
-      @media ( max-width: 500px) {
-        padding: 200px 25px;
-        width: calc(100% - 50px);
-        text-align: center;
-      }
+  @media (max-width: 500px) {
+    padding: 200px 25px;
+    width: calc(100% - 50px);
+    text-align: center;
+  }
 }
 
 h1 {
-    font-size: 64px;
-    font-weight: 700;
-    margin: 0;
+  font-size: 64px;
+  font-weight: 700;
+  margin: 0;
 
-    @media ( max-width: 920px) {
-        font-size: 40px;
-      }
+  @media (max-width: 920px) {
+    font-size: 40px;
+  }
 
-      @media ( max-width: 500px) {
-        font-size: 32px;
-      }
+  @media (max-width: 500px) {
+    font-size: 32px;
+  }
 }
 
 p {
-    font-size: 16px;
-    font-weight: 400;
+  font-size: 16px;
+  font-weight: 400;
 
-    @media ( max-width: 500px) {
-        font-size: 14px;
-      }
+  @media (max-width: 500px) {
+    font-size: 14px;
+  }
 }
 
 a {
-    color: $violet;
-    text-decoration: none;
-    
-    &:hover {
-        cursor: pointer;
-        text-decoration: underline;
-    }
+  color: $violet;
+  text-decoration: none;
 
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 }
 
 .mail {
-    color: $violet;
-    text-decoration: none;
-    
-    &:hover {
-        cursor: pointer;
-        text-decoration: underline;
-    }
+  color: $violet;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 }

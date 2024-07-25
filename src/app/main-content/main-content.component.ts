@@ -6,7 +6,6 @@ import { MySkillsComponent } from '../my-skills/my-skills.component';
 import { PortfolioComponent } from '../portfolio/portfolio.component';
 import { ContactComponent } from '../contact/contact.component';
 
-
 @Component({
   selector: 'app-main-content',
   standalone: true,
@@ -19,8 +18,6 @@ import { ContactComponent } from '../contact/contact.component';
     ContactComponent,
   ],
   templateUrl: './main-content.component.html',
-  styleUrl: './main-content.component.scss'
+  styleUrl: './main-content.component.scss',
 })
-export class MainContentComponent {
-
-}
+export class MainContentComponent {}

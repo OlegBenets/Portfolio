@@ -1,72 +1,122 @@
 <div class="contact-container">
   <div class="up-to-aot">
-    <a href="#aot"><img class="arrow-up" src="./../../assets/img/arrow-up.png"></a>
+    <a href="#aot"
+      ><img class="arrow-up" src="./../../assets/img/arrow-up.png"
+    /></a>
   </div>
-  <img class="purple-shadow" src="./../../assets/img/Purple shadow 4.png">
+  <img class="purple-shadow" src="./../../assets/img/Purple shadow 4.png" />
   <div class="headline">
     <div class="purple-line"></div>
-  <h2>{{ 'CONTACT' | translate }}</h2>
-</div>
-<div class="form-description-container">
-  <div class="description">
-    <h4>{{ 'CONTACT_SUBHEADLINE' | translate }}</h4>
-    <span>{{ 'CONTACT_DESCRIPTION' | translate }}</span>
-    <span [innerHTML]="translate.instant('CONTACT_PROMPT')"></span>
+    <h2>{{ "CONTACT" | translate }}</h2>
   </div>
+  <div class="form-description-container">
+    <div class="description">
+      <h4>{{ "CONTACT_SUBHEADLINE" | translate }}</h4>
+      <span>{{ "CONTACT_DESCRIPTION" | translate }}</span>
+      <span [innerHTML]="translate.instant('CONTACT_PROMPT')"></span>
+    </div>
     <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+      <div class="inputs-container">
+        <div class="input-wrapper">
+          <input
+            class="input-name-mail"
+            #name="ngModel"
+            minlength="3"
+            [(ngModel)]="contactData.name"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="{{ 'CONTACT_NAME_PLACEHOLDER' | translate }}"
+            required
+          />
+
+          @if(!name.valid && name.touched) {
+          <img class="status-icon" src="./../../assets/img/Not-Valid.png" />
+          <span class="error-text">{{ "CONTACT_NAME_ERROR" | translate }}</span>
+          } @else if (name.valid) {
+          <img class="status-icon" src="./../../assets/img/Valid.png" />
+          }
+        </div>
+      </div>
 
       <div class="inputs-container">
         <div class="input-wrapper">
-      <input class="input-name-mail" #name="ngModel" minlength="3" [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="{{ 'CONTACT_NAME_PLACEHOLDER' | translate }}" required>
+          <input
+            class="input-name-mail"
+            #mail="ngModel"
+            minlength="5"
+            [(ngModel)]="contactData.email"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="{{ 'CONTACT_EMAIL_PLACEHOLDER' | translate }}"
+            required
+            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+          />
 
-      @if(!name.valid && name.touched) {
-        <img class="status-icon" src="./../../assets/img/Not-Valid.png">
-        <span class="error-text">{{ 'CONTACT_NAME_ERROR' | translate }}</span>
-       } @else if (name.valid) {
-        <img class="status-icon" src="./../../assets/img/Valid.png">
-       }
+          @if(!mail.valid && mail.touched) {
+          <img class="status-icon" src="./../../assets/img/Not-Valid.png" />
+          <span class="error-text">{{
+            "CONTACT_EMAIL_ERROR" | translate
+          }}</span>
+          } @else if (mail.valid) {
+          <img class="status-icon" src="./../../assets/img/Valid.png" />
+          }
+        </div>
       </div>
-    </div>
 
       <div class="inputs-container">
         <div class="input-wrapper">
-      <input class="input-name-mail" #mail="ngModel" minlength="5" [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="{{ 'CONTACT_EMAIL_PLACEHOLDER' | translate }}" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-     
-      @if(!mail.valid && mail.touched) {
-        <img class="status-icon" src="./../../assets/img/Not-Valid.png">
-        <span class="error-text">{{ 'CONTACT_EMAIL_ERROR' | translate }}</span>
-       } @else if (mail.valid) {
-        <img class="status-icon" src="./../../assets/img/Valid.png">
-       }
+          <textarea
+            #message="ngModel"
+            minlength="4"
+            [(ngModel)]="contactData.message"
+            id="message"
+            name="message"
+            placeholder="{{ 'CONTACT_MESSAGE_PLACEHOLDER' | translate }}"
+            required
+          ></textarea>
+
+          @if(!message.valid && message.touched) {
+          <img class="status-icon" src="./../../assets/img/Not-Valid.png" />
+          <span class="error-text">{{
+            "CONTACT_MESSAGE_ERROR" | translate
+          }}</span>
+          } @else if (message.valid) {
+          <img class="status-icon" src="./../../assets/img/Valid.png" />
+          }
+        </div>
       </div>
-    </div>
 
       <div class="inputs-container">
-        <div class="input-wrapper">
-      <textarea #message="ngModel" minlength="4" [(ngModel)]="contactData.message" id="message" name="message" placeholder="{{ 'CONTACT_MESSAGE_PLACEHOLDER' | translate }}" required></textarea>
-
-      @if(!message.valid && message.touched) {
-        <img class="status-icon" src="./../../assets/img/Not-Valid.png">
-        <span class="error-text">{{ 'CONTACT_MESSAGE_ERROR' | translate }}</span>
-       } @else if (message.valid) {
-        <img class="status-icon" src="./../../assets/img/Valid.png">
-       }
-      </div>
-      </div>
-
-       <div class="inputs-container">
         <div class="checkbox-container">
-         <input class="checkbox" #checkbox="ngModel" [(ngModel)]="contactData.checkbox" type="checkbox" name="checkbox" id="checkbox" required>
-         <label for="checkbox"></label>
-         <span [innerHTML]="translate.instant('CONTACT_PRIVACY_POLICY')"></span>
+          <input
+            class="checkbox"
+            #checkbox="ngModel"
+            [(ngModel)]="contactData.checkbox"
+            type="checkbox"
+            name="checkbox"
+            id="checkbox"
+            required
+          />
+          <label for="checkbox"></label>
+          <span
+            [innerHTML]="translate.instant('CONTACT_PRIVACY_POLICY')"
+          ></span>
         </div>
         @if (!checkbox.valid && checkbox.touched) {
-          <span class="error-text">{{ 'CONTACT_PRIVACY_ERROR' | translate }}</span>
+        <span class="error-text">{{
+          "CONTACT_PRIVACY_ERROR" | translate
+        }}</span>
         }
-       </div>
+      </div>
 
-      <input class="submit" type="submit" [value]="translate.instant('CONTACT_SUBMIT_BUTTON')" [disabled]="!contactForm.form.valid">
-  
+      <input
+        class="submit"
+        type="submit"
+        [value]="translate.instant('CONTACT_SUBMIT_BUTTON')"
+        [disabled]="!contactForm.form.valid"
+      />
     </form>
   </div>
-  </div>
+</div>

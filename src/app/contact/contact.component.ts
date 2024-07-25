@@ -12,32 +12,58 @@ gsap.registerPlugin(ScrollTrigger);
   standalone: true,
   imports: [FormsModule, TranslateModule],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrl: './contact.component.scss',
 })
-export class ContactComponent implements AfterViewInit{
-
+export class ContactComponent implements AfterViewInit {
+  /**
+   * Creates an instance of ContactComponent.
+   *
+   * @param translate - The TranslateService for internationalization.
+   */
   constructor(public translate: TranslateService) {}
 
+  /**
+   * The HttpClient instance for making HTTP requests.
+   */
   http = inject(HttpClient);
 
+  /**
+   * Lifecycle hook that is called after the component's view has been fully initialized.
+   *
+   * Initializes the animations for the 'Contact' section.
+   */
   ngAfterViewInit(): void {
     this.animateContact();
   }
 
+  /**
+   * Switches the application language.
+   *
+   * @param language - The language code to switch to.
+   */
   switchLanguage(language: string) {
     this.translate.use(language);
     localStorage.setItem('language', language);
   }
 
+  /**
+   * The data model for the contact form.
+   */
   contactData = {
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
     checkbox: false,
-  }
+  };
 
+  /**
+   * A flag for testing the form submission without actually sending data.
+   */
   mailTest = true;
 
+  /**
+   * Configuration for the HTTP POST request.
+   */
   post = {
     endPoint: 'https://deineDomain.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
@@ -49,9 +75,17 @@ export class ContactComponent implements AfterViewInit{
     },
   };
 
+  /**
+   * Handles form submission.
+   *
+   * Sends the form data to the server if the form is valid and not in test mode.
+   *
+   * @param ngForm - The form to be submitted.
+   */
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-      this.http.post(this.post.endPoint, this.post.body(this.contactData))
+      this.http
+        .post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
             ngForm.resetForm();
@@ -66,35 +100,36 @@ export class ContactComponent implements AfterViewInit{
     }
   }
 
+  /**
+   * Animates elements in the 'Contact' section using GSAP.
+   * 
+   * Animates the headline and form elements with scroll-triggered animations.
+   */
   animateContact(): void {
-    let headline = document.querySelectorAll('.headline');
-    let form = document.querySelectorAll('.form-description-container');
+    this.setupAnimation('.headline', { x: '-100%', opacity: 0 }, { x: '0%', opacity: 1 }, 'top 99%', 'top 40%');
+    this.setupAnimation('.form-description-container', { y: '100%', opacity: 0 }, { y: '0%', opacity: 1 }, 'top 150%', 'top 90%');
+  }
 
-    gsap.fromTo(form,
-      {y: '100%', opacity: 0},
-      {
-        opacity: 1,
-        y: '0%',
-        scrollTrigger: {
-          trigger: form,
-          start: 'top 99%',
-          end: 'top 60%',
+  /**
+   * Helper function to set up GSAP animation.
+   * 
+   * @param selector - The CSS selector for the elements to animate.
+   * @param fromVars - The starting properties for the animation.
+   * @param toVars - The ending properties for the animation.
+   * @param start - The start position for the scroll trigger.
+   * @param end - The end position for the scroll trigger.
+   */
+  setupAnimation(selector: string, fromVars: gsap.TweenVars, toVars: gsap.TweenVars, start: string, end: string): void {
+    const elements = document.querySelectorAll(selector);
+    gsap.fromTo(elements, fromVars, {
+      ...toVars,
+      scrollTrigger: {
+        trigger: elements,
+        start: start,
+        end: end,
+        scrub: true,
       },
       duration: 1,
-    }
-    );
-      gsap.fromTo(headline, 
-        { x: '-100%', opacity: 0 },
-        { x: '0%', 
-          opacity: 1, 
-          scrollTrigger: {
-            trigger: headline,
-            start: 'top 99%',
-            end: 'top 40%',
-            scrub: true,
-          },
-        duration: 1
-        },
-      )
+    });
   }
 }

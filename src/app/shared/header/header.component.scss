@@ -16,12 +16,12 @@ header {
   z-index: 100;
   overflow: hidden;
 
-  @media ( max-width: 920px) {
+  @media (max-width: 920px) {
     width: calc(100% - 80px);
     padding: 37px 40px;
   }
 
-  @media ( max-width: 450px) {
+  @media (max-width: 450px) {
     width: calc(100% - 30px);
     height: calc(110px - 56px);
     padding: 28px 15px;
@@ -33,7 +33,7 @@ header {
     img {
       height: 150px;
 
-      @media ( max-width: 450px) {
+      @media (max-width: 450px) {
         height: 100px;
       }
     }
@@ -47,11 +47,11 @@ header {
 .links-translate-container {
   @include dFlex($jc: space-between, $ai: center, $g: 80px);
 
-  @media ( max-width: 920px) {
+  @media (max-width: 920px) {
     @include dFlex($jc: space-between, $ai: center, $g: 32px);
   }
 
-  @media ( max-width: 450px) {
+  @media (max-width: 450px) {
     @include dFlex($jc: space-between, $ai: center, $g: 16px);
   }
 
@@ -59,17 +59,17 @@ header {
     @include dFlex($ai: center, $g: 29px);
     gap: 29px;
 
-    @media ( max-width: 920px) {
+    @media (max-width: 920px) {
       display: none;
     }
-  
+
     a {
       font-size: 24px;
       font-weight: 400;
       text-decoration: none;
       color: white;
       transition: color ease-in-out 175ms;
-  
+
       &:hover {
         cursor: pointer;
         color: $green;
@@ -80,10 +80,10 @@ header {
   .translate-container {
     @include dFlex($jc: center, $ai: center, $g: 8px);
 
-    @media ( max-width: 450px) {
+    @media (max-width: 450px) {
       @include dFlex($jc: center, $ai: center, $g: 3px);
     }
-    
+
     .translate-button {
       background: none;
       border: none;
@@ -106,7 +106,7 @@ header {
   .burger-menu {
     display: none;
 
-    @media ( max-width: 920px) {
+    @media (max-width: 920px) {
       display: block;
     }
 
@@ -116,13 +116,13 @@ header {
 
       &:hover {
         cursor: pointer;
-      } 
+      }
 
       .burger-menu-img {
         width: 35px;
         height: 35px;
 
-        @media ( max-width: 450px) {
+        @media (max-width: 450px) {
           width: 28px;
           height: 28px;
         }
@@ -130,8 +130,6 @@ header {
     }
   }
 }
-
-
 
 .fullscreen-menu {
   position: fixed;
@@ -148,7 +146,8 @@ header {
   transform: translateX(100%);
   opacity: 0;
   visibility: hidden;
-  transition: transform 175ms ease-in-out, opacity 175ms ease-in-out, visibility 175ms ease-in-out;
+  transition: transform 175ms ease-in-out, opacity 175ms ease-in-out,
+    visibility 175ms ease-in-out;
 
   &.show {
     opacity: 1;
@@ -157,24 +156,20 @@ header {
   }
 
   .to-section-links-mobile {
-      @include dFlex($jc: center, $ai: center, $g: 29px);
-      flex-direction: column;
-    
-      a {
-        font-size: 42px;
-        font-weight: 700;
-        text-decoration: none;
-        color: white;
-        transition: color ease-in-out 175ms;
-    
-        &:hover {
-          cursor: pointer;
-          color: $green;
-        }
+    @include dFlex($jc: center, $ai: center, $g: 29px);
+    flex-direction: column;
+
+    a {
+      font-size: 42px;
+      font-weight: 700;
+      text-decoration: none;
+      color: white;
+      transition: color ease-in-out 175ms;
+
+      &:hover {
+        cursor: pointer;
+        color: $green;
       }
     }
   }
-
-
-
-
+}
