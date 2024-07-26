@@ -84,7 +84,7 @@
   flex-direction: column;
   max-width: 570px;
   width: 50%;
-  height: 300px;
+  height: auto;
   margin-right: 100px;
 
   @media (max-width: 1200px) {
@@ -98,10 +98,12 @@
     font-weight: 700;
     color: white;
     margin: 0;
-    text-wrap: nowrap;
+    text-wrap: wrap;
+    text-align: end;
 
     @media (max-width: 1200px) {
       font-size: 74px;
+      text-align: center;
     }
 
     @media (max-width: 650px) {

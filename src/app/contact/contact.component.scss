@@ -91,6 +91,10 @@
   height: auto;
   margin: 200px 100px 0 100px;
 
+  @media (max-width: 1200px) {
+    margin: 200px 50px 0 50px;
+  }
+
   @media (max-width: 920px) {
     @include dFlex($jc: space-between, $ai: center, $g: 16px);
     flex-direction: column;
@@ -238,7 +242,7 @@ form {
   height: auto;
 
   @media (max-width: 650px) {
-    @include dFlex($jc: flex-start, $ai: center, $g: 12px);
+    @include dFlex($jc: space-between, $ai: center, $g: 16px);
   }
 
   .checkbox {
@@ -284,7 +288,9 @@ form {
     color: white;
 
     @media (max-width: 650px) {
+      width: 85%;
       font-size: 14px;
+      text-align: start;
     }
 
     .privacy-policy {
@@ -300,8 +306,8 @@ form {
 
 .submit {
   @include dFlex($jc: center, $ai: center);
-  width: 195px;
-  height: 50px;
+  width: calc(260px - 60px);
+  height: calc(90px - 30px);
   padding: 15px 30px;
   border: none !important;
   border-radius: 10px;
@@ -310,9 +316,9 @@ form {
   font-size: 20px;
 
   @media (max-width: 650px) {
-    width: 160px;
-    height: 50px;
-    padding: 8px;
+    width: calc(180px - 12px);
+    height: calc(64px - 12px);
+    padding: 6px;
     font-size: 18px;
   }
 
