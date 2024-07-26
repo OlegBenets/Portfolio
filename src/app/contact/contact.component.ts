@@ -89,6 +89,7 @@ export class ContactComponent implements AfterViewInit {
         .subscribe({
           next: (response) => {
             ngForm.resetForm();
+            this.showConfirmation();
           },
           error: (error) => {
             console.error(error);
@@ -97,6 +98,7 @@ export class ContactComponent implements AfterViewInit {
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       ngForm.resetForm();
+      this.showConfirmation();
     }
   }
 
@@ -132,4 +134,23 @@ export class ContactComponent implements AfterViewInit {
       duration: 1,
     });
   }
+
+/**
+ * Displays a confirmation message with an animation.
+ */
+  showConfirmation() {
+    let confirmElement = document.querySelector('.confirm-container');
+    if (confirmElement) {
+      gsap.fromTo(
+        confirmElement,
+        {x: '100%', opacity: 0},
+        {x: '0%', opacity: 1, duration: 0.5}
+      );
+  
+      setTimeout(() => {
+        gsap.to(confirmElement, {x: '100%', opacity: 0, duration: 0.5});
+      }, 3000);
+    }
+  }
 }
+
