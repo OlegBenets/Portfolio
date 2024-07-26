@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
@@ -10,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, TranslateModule],
+  imports: [FormsModule, TranslateModule, CommonModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })

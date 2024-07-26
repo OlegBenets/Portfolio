@@ -247,39 +247,19 @@ form {
 
   .checkbox {
     display: none;
+  }
 
-    & + label {
-      width: 20px;
-      height: 20px;
-      border: 3px solid $green;
-      border-radius: 4px;
-      background-color: transparent;
-      cursor: pointer;
-      position: relative;
-      display: inline-block;
-      vertical-align: middle;
+  .checkbox-label {
+    cursor: pointer;
+  }
 
-      &:after {
-        content: "";
-        width: 6px;
-        height: 12px;
-        border: solid $green;
-        border-width: 0 3px 3px 0;
-        transform: rotate(45deg);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(45deg);
-        opacity: 0;
-        transition: opacity 175ms ease-in-out;
-      }
-    }
+  .checkbox-label img {
+    width: 20px;
+    height: 20px;
+  }
 
-    &:checked + label {
-      &:after {
-        opacity: 1;
-      }
-    }
+  .checkbox:checked + .checkbox-label img {
+    content: url('./../../assets/img/checkbox-on.png');
   }
 
   span {
@@ -292,14 +272,16 @@ form {
       font-size: 14px;
       text-align: start;
     }
+  }
 
-    .privacy-policy {
-      text-decoration: none;
-      color: $violet;
-
-      &:hover {
-        text-decoration: underline;
-      }
+  .privacy-policy {
+    text-decoration: none !important;
+    color: $violet !important;
+    font-weight: bold;
+  
+    &:hover {
+      cursor: pointer !important;
+      text-decoration: underline !important;
     }
   }
 }

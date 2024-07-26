@@ -43,21 +43,11 @@ p {
 }
 
 a {
-  color: $violet;
-  text-decoration: none;
+  color: $violet !important;
+  text-decoration: none !important;
 
   &:hover {
-    cursor: pointer;
-    text-decoration: underline;
-  }
-}
-
-.mail {
-  color: $violet;
-  text-decoration: none;
-
-  &:hover {
-    cursor: pointer;
-    text-decoration: underline;
+    cursor: pointer !important;
+    text-decoration: underline !important;
   }
 }
