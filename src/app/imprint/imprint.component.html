@@ -1,10 +1,17 @@
 <div class="imprint-container">
-  <h1>{{ "IMPRINT" | translate }}</h1>
-  <p>{{ "IMPRESSUM_PARAGRAPH_1" | translate }}</p>
+  <h1>{{ 'IMPRINT' | translate }}</h1>
+  <p>{{ 'IMPRESSUM_PARAGRAPH_1' | translate }}</p>
   <p [innerHTML]="translate.instant('IMPRESSUM_PARAGRAPH_2')"></p>
   <p [innerHTML]="translate.instant('IMPRESSUM_PARAGRAPH_3')"></p>
-  <p [innerHTML]="translate.instant('IMPRESSUM_PARAGRAPH_4')"></p>
+  <p>
+    <strong>{{ 'IMPRESSUM_CONTACT' | translate }}:</strong> <br />
+    {{ 'IMPRESSUM_PHONE' | translate }}: +49 1728183955<br />
+    Email: <a href="mailto:oleg.benets@web.de">oleg.benets&#64;web.de</a>
+  </p>
   <p [innerHTML]="translate.instant('IMPRESSUM_PARAGRAPH_5')"></p>
   <br />
-  <p [innerHTML]="translate.instant('IMPRESSUM_FOOTER')"></p>
+  <p>
+    {{ 'IMPRESSUM_FOOTER' | translate
+    }} <a href="https://www.impressum-generator.de">impressum-generator.de</a>
+  </p>
 </div>

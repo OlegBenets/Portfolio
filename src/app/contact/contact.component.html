@@ -102,11 +102,9 @@
           <label for="checkbox" class="checkbox-label">
             <img src="./../../assets/img/checkbox-off.png" alt="Checkbox image">
           </label>
-          <span
-            [innerHTML]="translate.instant('CONTACT_PRIVACY_POLICY')"
-          ></span>
+          <span>{{ 'CONTACT_PRIVACY_POLICY_TEXT_1' | translate }} <a class="privacy-policy" [routerLink]="['/privacy']">{{ 'CONTACT_PRIVACY_POLICY' | translate }}</a> {{ 'CONTACT_PRIVACY_POLICY_TEXT_2' | translate }}</span>
         </div>
-        @if (!checkbox.valid) {
+        @if (!checkbox.valid && checkbox.touched) {
         <span class="error-text">{{
           "CONTACT_PRIVACY_ERROR" | translate
         }}</span>

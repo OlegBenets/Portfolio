@@ -55,7 +55,9 @@ export class DataService {
       CONTACT_NAME_PLACEHOLDER: 'Your name',
       CONTACT_EMAIL_PLACEHOLDER: 'Your email',
       CONTACT_MESSAGE_PLACEHOLDER: 'Your message',
-      CONTACT_PRIVACY_POLICY: `I've read the <a class="privacy-policy" href="#">privacy policy</a> and agree to the processing of my data as outlined.`,
+      CONTACT_PRIVACY_POLICY: 'privacy policy',
+      CONTACT_PRIVACY_POLICY_TEXT_1: 'I´ve read the',
+      CONTACT_PRIVACY_POLICY_TEXT_2: 'and agree to the processing of my data as outlined.',
       CONTACT_SUBMIT_BUTTON: 'Send message :)',
       CONTACT_NAME_ERROR: 'Please enter your name',
       CONTACT_EMAIL_ERROR: 'Please enter a valid email',
@@ -69,12 +71,11 @@ export class DataService {
         'Oleg Benets <br> Basteigasse 1<br> 95326 Kulmbach <br>',
       IMPRESSUM_PARAGRAPH_3:
         '<strong>Represented by: </strong><br>Oleg Benets<br>',
-      IMPRESSUM_PARAGRAPH_4:
-        '<strong>Contact:</strong> <br>Phone: +49 1728183955<br>Email: <a href="mailto:oleg.benets@web.de">oleg.benets&#64;web.de</a>',
+      IMPRESSUM_CONTACT:'Contact',
+      IMPRESSUM_PHONE:'Phone',
       IMPRESSUM_PARAGRAPH_5:
         '<strong>Disclaimer: </strong><br><br><strong>Liability for content</strong><br><br>The contents of our pages were created with the utmost care. However, we cannot guarantee the correctness, completeness, and up-to-dateness of the content. As a service provider, we are responsible for our own content on these pages under general laws according to § 7 Abs.1 DDG. However, according to §§ 8 to 10 DDG, we are not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information according to general laws remain unaffected. Liability in this regard is only possible from the point in time at which we become aware of a specific legal infringement. Upon becoming aware of corresponding legal violations, we will remove these contents immediately.<br><br><strong>Liability for links</strong><br><br>Our offer contains links to external websites of third parties, over whose content we have no influence. Therefore, we cannot assume any responsibility for these external contents. The provider or operator of the pages is always responsible for the content of the linked pages. The linked pages were checked for possible legal violations at the time of linking. Illegal content was not recognizable at the time of linking. A permanent content control of the linked pages is, however, not reasonable without concrete evidence of an infringement. Upon becoming aware of legal violations, we will remove such links immediately.<br><br><strong>Data protection</strong><br><br>The use of our website is usually possible without providing personal data. Insofar as personal data (for example, name, address, or email addresses) is collected on our pages, this is always done, as far as possible, on a voluntary basis. These data will not be passed on to third parties without your explicit consent. <br>We point out that data transmission over the Internet (e.g., when communicating via email) can have security vulnerabilities. A complete protection of the data against access by third parties is not possible. <br>The use of contact data published within the framework of the imprint obligation by third parties for the purpose of sending not explicitly requested advertising and information materials is hereby expressly excluded. The operators of the pages reserve the right to take legal action in the event of the unsolicited sending of advertising information, for example through spam emails.<br>',
-      IMPRESSUM_FOOTER:
-        'Website imprint from <a href="https://www.impressum-generator.de">impressum-generator.de</a>',
+      IMPRESSUM_FOOTER:'Website imprint from',
     });
 
     this.translate.setTranslation('de', {
@@ -112,7 +113,9 @@ export class DataService {
       CONTACT_NAME_PLACEHOLDER: 'Ihr Name',
       CONTACT_EMAIL_PLACEHOLDER: 'Ihre E-Mail',
       CONTACT_MESSAGE_PLACEHOLDER: 'Ihre Nachricht',
-      CONTACT_PRIVACY_POLICY: `Ich habe die <a class="privacy-policy" href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.`,
+      CONTACT_PRIVACY_POLICY: 'Datenschutzerklärung',
+      CONTACT_PRIVACY_POLICY_TEXT_1: 'Ich habe die',
+      CONTACT_PRIVACY_POLICY_TEXT_2: 'gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.',
       CONTACT_SUBMIT_BUTTON: 'Nachricht senden :)',
       CONTACT_NAME_ERROR: 'Bitte geben Sie Ihren Namen ein',
       CONTACT_EMAIL_ERROR: 'Bitte geben Sie eine gültige E-Mail-Adresse ein',
@@ -126,12 +129,32 @@ export class DataService {
         'Oleg Benets <br> Basteigasse 1<br> 95326 Kulmbach <br>',
       IMPRESSUM_PARAGRAPH_3:
         '<strong>Vertreten durch: </strong><br>Oleg Benets<br>',
-      IMPRESSUM_PARAGRAPH_4:
-        '<strong>Kontakt:</strong> <br>Telefon: +49 1728183955<br>E-Mail: <a class="mail" href="mailto:oleg.benets@web.de">oleg.benets&#64;web.de</a>',
+      IMPRESSUM_CONTACT:'Kontakt',
+      IMPRESSUM_PHONE:'Telefon',
       IMPRESSUM_PARAGRAPH_5:
         '<strong>Haftungsausschluss: </strong><br><br><strong>Haftung für Inhalte</strong><br><br>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.<br><br><strong>Haftung für Links</strong><br><br>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.<br><br><strong>Datenschutz</strong><br><br>Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben. <br>Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich. <br>Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.<br>',
-      IMPRESSUM_FOOTER:
-        'Website Impressum von <a href="https://www.impressum-generator.de">impressum-generator.de</a>',
+      IMPRESSUM_FOOTER: 'Website Impressum von',
+      PRIVACY_POLICY: 'Datenschutzerklärung',
+      PRIVACY_POLICY_SECTION_1: '1. Datenschutz auf einen Blick',
+      GENERAL_INFORMATION: 'Allgemeine Hinweise',
+      PRIVACY_GENERAL_INFORMATION: 'Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausfuhrliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.',
+      DATA_COLLECTION_ON_THIS_WEBSITE: 'Datenerfassung auf dieser Website',
+      DATA_COLLECTION_RESPONSIBLE: 'Wer ist verantwortlich für die Datenerfassung auf dieser Website?',
+      PRIVACY_DATA_COLLECTION_RESPONSIBLE: '    Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten k&ouml;nnen Sie dem Abschnitt &bdquo;Hinweis zur Verantwortlichen Stelle&ldquo; in dieser Datenschutzerkl&auml;rung entnehmen.',
+      DATA_COLLECTION_METHODS: 'Wie erfassen wir Ihre Daten?',
+      PRIVACY_DATA_COLLECTION_METHODS: 'Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z.&nbsp;B. um Daten handeln, die Sie in ein Kontaktformular eingeben.',
+      PRIVACY_DATA_COLLECTION_TECH: 'Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z.&nbsp;B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.',
+      DATA_USAGE: 'Wofür nutzen wir Ihre Daten?',
+      PRIVACY_DATA_USAGE: 'Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.',
+      YOUR_RIGHTS: 'Welche Rechte haben Sie bezüglich Ihrer Daten?',
+      PRIVACY_YOUR_RIGHTS: 'Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Dateverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden.',
+      ANALYSIS_TOOLS: 'Analyse-Tools und Tools von Drittanbietern',
+      PRIVACY_ANALYSIS_TOOLS: '    Beim Besuch dieser Website kann Ihr Surf-Verhalten statistisch ausgewertet werden. Das geschieht vor allem mit sogenannten Analyseprogrammen.',
+      PRIVACY_ANALYSIS_TOOLS_DETAIL: 'Detaillierte Informationen zu diesen Analyseprogrammen finden Sie in der folgenden Datenschutzerklärung.',
+      HOSTING: '2. Hosting',
+      PRIVACY_HOSTING_PROVIDER: 'Wir hosten die Inhalte unserer Website bei folgendem Anbieter:',
+      PRIVACY_ALL_INKL: 'Anbieter ist die ALL-INKL.COM - Neue Medien M&uuml;nnich, Inh. Ren&eacute; M&uuml;nnich, Hauptstra&szlig;e 68, 02742 Friedersdorf (nachfolgend All-Inkl). Details entnehmen Sie der Datenschutzerkl&auml;rung von All-Inkl:',
+      PRIVACY_ALL_INKL_CONTRACT: 'Die Verwendung von All-Inkl erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer m&ouml;glichst zuverl&auml;ssigen Darstellung unserer Website. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschlie&szlig;lich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endger&auml;t des Nutzers (z.&nbsp;B. Device-Fingerprinting) im Sinne des TDDDG umfasst. Die Einwilligung ist jederzeit widerrufbar.',
     });
   }
 

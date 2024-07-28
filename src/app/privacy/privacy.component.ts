@@ -1,12 +1,30 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-privacy',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './privacy.component.html',
   styleUrl: './privacy.component.scss'
 })
 export class PrivacyComponent {
 
+    /**
+   * Creates an instance of ImprintComponent.
+   * 
+   * @param translate - The TranslateService for internationalization.
+   */
+    constructor(public translate: TranslateService) {}
+
+    /**
+     * Switches the application language.
+     * 
+     * @param language - The language code to switch to.
+     */
+    switchLanguage(language: string) {
+      this.translate.use(language);
+      localStorage.setItem('language', language);
+    }
 }
