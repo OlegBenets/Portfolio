@@ -5,8 +5,12 @@
   @include dFlex($jc: space-between, $ai: center, $g: 16px);
   width: 100%;
   height: auto;
-  padding-top: 100px;
+  padding-top: 200px;
   padding-bottom: 200px;
+
+  @media (max-width: 1200px) {
+        padding-top: 100px;
+    }
 
   .purple-shadow {
     @include position($t: none, $l: 0);
