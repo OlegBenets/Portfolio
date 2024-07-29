@@ -86,6 +86,7 @@
   width: 50%;
   height: auto;
   margin-right: 100px;
+  z-index: 100;
 
   @media (max-width: 1200px) {
     @include dFlex($jc: center, $ai: center, $g: 12px);

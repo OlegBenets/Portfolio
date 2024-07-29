@@ -4,9 +4,9 @@
   </a>
   <div class="links-translate-container">
     <div class="to-section-links">
-      <a href="#about-me">{{ "ABOUT_ME" | translate }}</a>
-      <a href="#skills">{{ "SKILLS" | translate }}</a>
-      <a href="#portfolio">{{ "PORTFOLIO" | translate }}</a>
+      <a href="#about-me" [class.active]="activeLink === 'about-me'" (click)="setActiveLink('about-me')">{{ "ABOUT_ME" | translate }}</a>
+      <a href="#skills" [class.active]="activeLink === 'skills'" (click)="setActiveLink('skills')">{{ "SKILLS" | translate }}</a>
+      <a href="#portfolio" [class.active]="activeLink === 'portfolio'" (click)="setActiveLink('portfolio')">{{ "PORTFOLIO" | translate }}</a>
     </div>
     <div class="translate-container">
       <button class="translate-button" (click)="switchLanguage('de')">
@@ -27,16 +27,16 @@
 
 <div class="fullscreen-menu" [ngClass]="{ show: isBurgerMenuVisible }">
   <div class="to-section-links-mobile">
-    <a (click)="toggleBurgerMenu()" href="#about-me">{{
+    <a [class.active]="activeLink === 'about-me'" (click)="setActiveLink('about-me')" (click)="toggleBurgerMenu()" href="#about-me">{{
       "ABOUT_ME" | translate
     }}</a>
-    <a (click)="toggleBurgerMenu()" href="#skills">{{
+    <a [class.active]="activeLink === 'skills'" (click)="setActiveLink('skills')" (click)="toggleBurgerMenu()" href="#skills">{{
       "SKILLS" | translate
     }}</a>
-    <a (click)="toggleBurgerMenu()" href="#portfolio">{{
+    <a [class.active]="activeLink === 'portfolio'" (click)="setActiveLink('portfolio')"(click)="toggleBurgerMenu()" href="#portfolio">{{
       "PORTFOLIO" | translate
     }}</a>
-    <a (click)="toggleBurgerMenu()" href="#contact">{{
+    <a [class.active]="activeLink === 'contact'" (click)="setActiveLink('contact')" (click)="toggleBurgerMenu()" href="#contact">{{
       "CONTACT" | translate
     }}</a>
   </div>

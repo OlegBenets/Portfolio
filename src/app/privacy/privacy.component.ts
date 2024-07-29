@@ -11,7 +11,15 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class PrivacyComponent {
 
-    /**
+  /**
+   * This method is called after the component's initialization and ensures
+   * that the page is scrolled to the top.
+   */
+  ngOnInit(): void {
+    window.scrollTo(0, 0);
+  }
+
+  /**
    * Creates an instance of ImprintComponent.
    * 
    * @param translate - The TranslateService for internationalization.

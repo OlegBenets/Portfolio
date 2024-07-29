@@ -68,7 +68,6 @@ export class AboutMeComponent implements AfterViewInit {
           trigger: elements,
           start: 'top 80%',
           end: 'top 50%',
-          scrub: true,
         },
         duration: 1,
       }

@@ -62,7 +62,6 @@ export class PortfolioComponent implements AfterViewInit {
             trigger: project,
             start: 'top 80%',
             end: 'top 50%',
-            scrub: true,
           },
           duration: 1,
         }
@@ -91,7 +90,6 @@ export class PortfolioComponent implements AfterViewInit {
           trigger: elements,
           start: start,
           end: end,
-          scrub: true,
         },
         duration: duration,
       });

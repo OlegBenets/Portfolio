@@ -8,7 +8,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1920px;
+  max-width: 1720px;
   width: calc(100% - 200px);
   height: calc(110px - 74px);
   padding: 37px 100px;
@@ -79,6 +79,10 @@ header {
 
       &:hover {
         cursor: pointer;
+        color: $green;
+      }
+
+      &.active {
         color: $green;
       }
     }
@@ -175,6 +179,10 @@ header {
 
       &:hover {
         cursor: pointer;
+        color: $green;
+      }
+
+      &.active {
         color: $green;
       }
     }

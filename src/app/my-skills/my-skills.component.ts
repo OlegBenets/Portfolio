@@ -65,7 +65,7 @@ export class MySkillsComponent implements AfterViewInit {
    * Animates the description and skills icons with scroll-triggered animations.
    */
   animateMySkills(): void {
-    this.setupAnimation('.skills-icons-container', { opacity: 0 }, { opacity: 1 }, 'top 60%', 'top 40%');
+    this.setupAnimation('.skills-icons-container', { opacity: 0 }, { opacity: 1 }, 'top 99%', 'top 60%');
     this.setupAnimation('.description-my-skills', { x: '100%', opacity: 0 }, { x: '0%', opacity: 1 }, 'top 99%', 'top 50%');
   }
   
@@ -86,7 +86,6 @@ export class MySkillsComponent implements AfterViewInit {
         trigger: elements,
         start: start,
         end: end,
-        scrub: true,
       },
       duration: 1,
     });

@@ -34,19 +34,6 @@ body {
   background-color: $dark_blue;
 }
 
-.container {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: $dark_blue;
-  max-width: 1920px;
-  width: 100%;
-  min-height: 100vh;
-  height: auto;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
 ::-webkit-scrollbar {
   width: 4px;
   height: 10px;

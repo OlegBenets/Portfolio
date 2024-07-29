@@ -42,6 +42,12 @@ export class HeaderComponent implements OnInit {
   animationInterval: any;
 
   /**
+   * The currently active link.
+   * @type {string}
+   */
+  activeLink: string = '';
+ 
+  /**
    * Creates an instance of the HeaderComponent.
    * @param {TranslateService} translate - Service used for language translation.
    */
@@ -61,6 +67,14 @@ export class HeaderComponent implements OnInit {
   switchLanguage(language: string) {
     this.translate.use(language);
     localStorage.setItem('language', language);
+  }
+  
+  /**
+   * Sets the active link.
+   * @param {string} link - The link to set as active.
+   */
+  setActiveLink(link: string) {
+    this.activeLink = link;
   }
 
   /**

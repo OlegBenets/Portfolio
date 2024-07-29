@@ -96,7 +96,7 @@ export class ContactComponent implements AfterViewInit {
           error: (error) => {
             console.error(error);
           },
-          complete: () => console.info('send post complete'),
+          // complete: () => console.info('send post complete'),
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       ngForm.resetForm();
@@ -110,8 +110,10 @@ export class ContactComponent implements AfterViewInit {
    * Animates the headline and form elements with scroll-triggered animations.
    */
   animateContact(): void {
+    if (window.innerWidth >= 920) {
     this.setupAnimation('.headline', { x: '-100%', opacity: 0 }, { x: '0%', opacity: 1 }, 'top 99%', 'top 40%');
-    this.setupAnimation('.form-description-container', { y: '100%', opacity: 0 }, { y: '0%', opacity: 1 }, 'top 150%', 'top 90%');
+    this.setupAnimation('.form-description-container', { x: '100%', opacity: 0 }, { x: '0%', opacity: 1 }, 'top 90%', 'top 40%');
+    }
   }
 
   /**
@@ -131,7 +133,6 @@ export class ContactComponent implements AfterViewInit {
         trigger: elements,
         start: start,
         end: end,
-        scrub: true,
       },
       duration: 1,
     });
