@@ -61,13 +61,13 @@ export class ContactComponent implements AfterViewInit {
   /**
    * A flag for testing the form submission without actually sending data.
    */
-  mailTest = true;
+  mailTest = false;
 
   /**
    * Configuration for the HTTP POST request.
    */
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://oleg-benets.dev/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
