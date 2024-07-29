@@ -47,6 +47,10 @@ header {
 .links-translate-container {
   @include dFlex($jc: space-between, $ai: center, $g: 80px);
 
+  @media (max-width: 1200px) {
+    @include dFlex($jc: space-between, $ai: center, $g: 60px);
+  }
+
   @media (max-width: 920px) {
     @include dFlex($jc: space-between, $ai: center, $g: 32px);
   }
@@ -57,7 +61,10 @@ header {
 
   .to-section-links {
     @include dFlex($ai: center, $g: 29px);
-    gap: 29px;
+
+    @media (max-width: 1200px) {
+      @include dFlex($ai: center, $g: 16px);
+    }
 
     @media (max-width: 920px) {
       display: none;
