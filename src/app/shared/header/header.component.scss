@@ -3,17 +3,13 @@
 header {
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  max-width: 1720px;
-  width: calc(100% - 200px);
-  height: calc(110px - 74px);
-  padding: 37px 100px;
+  width: 100%;
   background-color: $dark_blue;
-  z-index: 100;
+  z-index: 1000;
   overflow: hidden;
 
   @media (max-width: 920px) {
@@ -25,6 +21,16 @@ header {
     width: calc(100% - 30px);
     height: calc(110px - 56px);
     padding: 28px 15px;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1920px;
+    width: calc(100% - 200px);
+    height: calc(110px - 74px);
+    padding: 37px 100px;
   }
 
   .back-to-aot {

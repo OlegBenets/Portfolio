@@ -1,6 +1,12 @@
 @import "./../../styles.scss";
 
+.privacy-main-container {
+  @include dFlex($jc: center, $ai: center, $g: 0px);
+  width: 100%;
+}
+
 .privacy-container {
+  max-width: 1920px;
   width: calc(100% - 200px);
   min-height: 80vh;
   height: auto;

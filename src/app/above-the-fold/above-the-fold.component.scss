@@ -48,6 +48,7 @@ h3 {
 
 .img-introduce-container {
   @include dFlex($jc: space-between, $ai: center);
+  max-width: 1920px;
   width: 90%;
   height: auto;
 
@@ -89,6 +90,26 @@ h3 {
   width: 100%;
   height: auto;
   z-index: 2;
+
+  @media (min-width: 1920px) {
+    @include position($t: 200px, $l: 0);
+  }
+
+  @media (min-width: 2300px) {
+    @include position($t: 100px, $l: 0);
+  }
+
+  @media (min-width: 2700px) {
+    @include position($t: 0px, $l: 0);
+  }
+
+  @media (min-width: 3000px) {
+    @include position($t: -100px, $l: 0);
+  }
+
+  @media (min-width: 3450px) {
+    @include position($t: -300px, $l: 0);
+  }
 
   @media (max-width: 1600px) {
     @include position($t: 380px, $l: 0);

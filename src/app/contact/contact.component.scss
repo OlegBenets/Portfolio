@@ -2,7 +2,7 @@
 
 .contact-container {
   @include position($p: relative, $t: 0px);
-  @include dFlex($jc: space-between, $ai: center, $g: 16px);
+  @include dFlex($jc: center, $ai: center, $g: 16px);
   width: 100%;
   height: auto;
   padding-top: 200px;
@@ -64,6 +64,10 @@
     width: 50px;
     border: 3px solid $violet;
 
+    @media (min-width: 1920px) {
+      width: calc(50vw - 200px);
+    }
+
     @media (max-width: 400px) {
       width: 25px;
     }
@@ -91,6 +95,7 @@
 
 .form-description-container {
   @include dFlex($jc: space-between, $ai: flex-start, $g: 16px);
+  max-width: 1920px;
   width: 100%;
   height: auto;
   padding: 150px 100px 0 100px;

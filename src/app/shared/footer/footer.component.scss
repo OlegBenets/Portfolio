@@ -1,26 +1,31 @@
 @import "./../../../styles.scss";
 
 footer {
-  @include dFlex($jc: space-between, $ai: center);
-  max-width: 1720px;
-  width: calc(100% - 200px);
-  height: calc(180px - 32px);
-  padding: 16px 100px;
+  @include dFlex($jc: center, $ai: center, $g: 0);
+  width: 100%;
   border-top: 4px solid $green;
   background-color: $dark_blue;
   z-index: 100;
 
-  @media (max-width: 920px) {
-    @include dFlex($jc: center, $ai: center, $g: 32px);
-    flex-direction: column;
-    min-height: 180px;
-    height: 300px;
-  }
+  .footer-container {
+    @include dFlex($jc: space-between, $ai: center);
+    max-width: 1920px;
+    width: calc(100% - 200px);
+    height: calc(180px - 32px);
+    padding: 16px 100px;
 
-  @media (max-width: 650px) {
-    @include dFlex($jc: center, $ai: center, $g: 24px);
-    width: calc(100% - 32px);
-    padding: 16px;
+    @media (max-width: 920px) {
+      @include dFlex($jc: center, $ai: center, $g: 32px);
+      flex-direction: column;
+      min-height: 180px;
+      height: 300px;
+    }
+  
+    @media (max-width: 650px) {
+      @include dFlex($jc: center, $ai: center, $g: 24px);
+      width: calc(100% - 32px);
+      padding: 16px;
+    }
   }
 
   .copyright {

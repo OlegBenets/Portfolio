@@ -1,15 +1,13 @@
 @import "./../../styles.scss";
 
-.my-skills-container {
+.my-skills-section {
   @include position($p: relative, $t: 0px);
-  @include dFlex($jc: space-between, $ai: center, $g: 16px);
+  @include dFlex($jc: center, $ai: center, $g: 0);
   width: 100%;
   height: auto;
   padding-top: 200px;
 
   @media (max-width: 1200px) {
-    @include dFlex($jc: space-between, $ai: center, $g: 50px);
-    flex-direction: column-reverse;
     padding-top: 100px;
   }
 
@@ -17,6 +15,24 @@
     @include position($t: 200px, $l: 0);
     width: 420px;
     height: auto;
+
+    @media (min-width: 1920px) {
+      @include position($t: 0, $l: 0);
+    }
+  }
+}
+
+.my-skills-container {
+  @include position($p: relative, $t: 0px);
+  @include dFlex($jc: space-between, $ai: center, $g: 16px);
+  max-width: 1920px;
+  width: 100%;
+  height: auto;
+
+
+  @media (max-width: 1200px) {
+    @include dFlex($jc: space-between, $ai: center, $g: 50px);
+    flex-direction: column-reverse;
   }
 }
 

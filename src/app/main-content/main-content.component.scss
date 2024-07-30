@@ -1,12 +1,11 @@
 @import "./../../styles.scss";
 
-.container {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: $dark_blue;
-    max-width: 1920px;
+app-about-me {
     width: 100%;
-    height: auto;
-    overflow: hidden;
+    @include dFlex($jc: center, $ai: center, $g: 0px);
   }
+
+app-my-skills {
+    @include dFlex($jc: center, $ai: center, $g: 0px);
+    width: 100%;
+}

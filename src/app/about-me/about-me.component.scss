@@ -3,6 +3,7 @@
 .about-me-container {
   @include position($p: relative, $t: 0px);
   @include dFlex($jc: space-between, $ai: center);
+  max-width: 1920px;
   width: 100%;
   height: auto;
   padding-top: 100px;
@@ -101,6 +102,11 @@ h2 {
 .green-line {
   width: 100px;
   border: 3px solid $green;
+
+  @media (min-width: 1920px) {
+    @include position($t: 50%, $l: 100%);
+    width: 100vw;
+  }
 }
 
 .image-container {
