@@ -111,6 +111,15 @@ h3 {
     @include position($t: -300px, $l: 0);
   }
 
+  @media (min-width: 4200px) {
+    @include position($t: -500px, $l: 0);
+  }
+
+  @media (min-width: 5000px) {
+    @include position($t: -700px, $l: 0);
+  }
+
+
   @media (max-width: 1600px) {
     @include position($t: 380px, $l: 0);
   }

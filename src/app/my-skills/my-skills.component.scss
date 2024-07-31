@@ -15,6 +15,7 @@
     @include position($t: 200px, $l: 0);
     width: 420px;
     height: auto;
+    z-index: 3;
 
     @media (min-width: 1920px) {
       @include position($t: 0, $l: 0);
@@ -28,6 +29,7 @@
   max-width: 1920px;
   width: 100%;
   height: auto;
+  z-index: 4;
 
 
   @media (max-width: 1200px) {

@@ -12,17 +12,6 @@ header {
   z-index: 1000;
   overflow: hidden;
 
-  @media (max-width: 920px) {
-    width: calc(100% - 80px);
-    padding: 37px 40px;
-  }
-
-  @media (max-width: 450px) {
-    width: calc(100% - 30px);
-    height: calc(110px - 56px);
-    padding: 28px 15px;
-  }
-
   .header-container {
     display: flex;
     justify-content: space-between;
@@ -31,6 +20,17 @@ header {
     width: calc(100% - 200px);
     height: calc(110px - 74px);
     padding: 37px 100px;
+
+    @media (max-width: 920px) {
+      width: calc(100% - 80px);
+      padding: 37px 40px;
+    }
+  
+    @media (max-width: 450px) {
+      width: calc(100% - 30px);
+      height: calc(110px - 56px);
+      padding: 28px 15px;
+    }
   }
 
   .back-to-aot {

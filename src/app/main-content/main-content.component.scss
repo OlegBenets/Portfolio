@@ -1,5 +1,9 @@
 @import "./../../styles.scss";
 
+.container {
+  overflow: hidden;
+}
+
 app-about-me {
     width: 100%;
     @include dFlex($jc: center, $ai: center, $g: 0px);
