@@ -7,6 +7,7 @@
   width: 100%;
   height: auto;
   padding-top: 200px;
+  z-index: 4;
 
   @media (max-width: 1200px) {
     padding-top: 100px;
@@ -54,7 +55,6 @@
   @include dFlex($jc: flex-end, $ai: center, $g: 16px);
   width: 100%;
   height: auto;
-  z-index: 1;
 
   h2 {
     width: 400px;
@@ -81,6 +81,9 @@
   .purple-line {
     width: 100px;
     border: 3px solid $violet;
+    @media (max-width: 650px) {
+      width: calc(50% - 120px);
+    }
   }
 
   .purple-line-long {

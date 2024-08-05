@@ -5,11 +5,10 @@
   @include dFlex($jc: center, $ai: flex-start);
   width: 100%;
   height: calc(100vh - 200px);
-  padding-top: 200px;
+  padding-top: 100px;
   background-color: $dark_blue;
 
   @media (max-width: 1200px) {
-    padding-top: 100px;
     height: calc(100vh - 100px);
   }
 }
@@ -53,16 +52,16 @@ h3 {
   height: auto;
 
   @media (max-width: 1200px) {
-    gap: 100px;
+    gap: 70px;
     flex-direction: column;
   }
 
   @media (max-width: 460px) {
-    gap: 64px;
+    gap: 60px;
   }
 
   .profile-img {
-    width: 646px;
+    width: 600px;
     height: auto;
     background-image: url(../../assets/img/photo\ shadows.png);
     background-position: center;
@@ -72,27 +71,27 @@ h3 {
     z-index: 1;
 
     @media (max-width: 1200px) {
-      width: 480px;
+      width: 440px;
     }
 
     @media (max-width: 900px) {
-      width: 450px;
+      width: 410px;
     }
 
     @media (max-width: 460px) {
-      width: 300px;
+      width: 260px;
     }
   }
 }
 
 .background-line {
-  @include position($t: 280px, $l: 0);
+  @include position($t: 340px, $l: 0);
   width: 100%;
   height: auto;
   z-index: 2;
 
   @media (min-width: 1920px) {
-    @include position($t: 200px, $l: 0);
+    @include position($t: 230px, $l: 0);
   }
 
   @media (min-width: 2300px) {
@@ -100,15 +99,15 @@ h3 {
   }
 
   @media (min-width: 2700px) {
-    @include position($t: 0px, $l: 0);
+    @include position($t: 30px, $l: 0);
   }
 
   @media (min-width: 3000px) {
-    @include position($t: -100px, $l: 0);
+    @include position($t: -90px, $l: 0);
   }
 
   @media (min-width: 3450px) {
-    @include position($t: -300px, $l: 0);
+    @include position($t: -280px, $l: 0);
   }
 
   @media (min-width: 4200px) {
@@ -116,25 +115,25 @@ h3 {
   }
 
   @media (min-width: 5000px) {
-    @include position($t: -700px, $l: 0);
+    @include position($t: -650px, $l: 0);
   }
 
 
   @media (max-width: 1600px) {
-    @include position($t: 380px, $l: 0);
+    @include position($t: 420px, $l: 0);
   }
 
   @media (max-width: 1200px) {
-    @include position($t: 480px, $l: 0);
+    @include position($t: 520px, $l: 0);
     content: url("./../../assets/img/Vector\ \(14\).png");
   }
 
   @media (max-width: 900px) {
-    @include position($t: 480px, $l: 0);
+    @include position($t: 540px, $l: 0);
   }
 
   @media (max-width: 460px) {
-    @include position($t: 370px, $l: 0);
+    @include position($t: 390px, $l: 0);
   }
 }
 
@@ -211,7 +210,7 @@ h3 {
 }
 
 .social-links {
-  @include position($t: 92vh, $l: 0px);
+  @include position($t: 95vh, $l: 0px);
   @include dFlex($jc: flex-end, $ai: center, $g: 42px);
   width: 60%;
   height: 40px;
@@ -237,6 +236,10 @@ h3 {
     width: 30px;
     height: 30px;
     transition: transform 175ms ease-in-out;
+    @media (max-width: 1200px) {
+      width: 20px;
+      height: 20px;
+    }
 
     .icons {
       width: 30px;
