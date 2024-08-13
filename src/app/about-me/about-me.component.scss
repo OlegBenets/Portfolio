@@ -94,6 +94,10 @@ h2 {
 .small-image-container {
   @include dFlex($jc: flex-end, $ai: center);
 
+  @media (min-width: 1920px) {
+    margin-right: 100px;
+  }
+
   @media (max-width: 920px) {
     display: none;
   }

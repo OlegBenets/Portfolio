@@ -30,11 +30,11 @@ export class DataService {
       LETS_TALK: `Let's talk!`,
       SCROLL_DOWN: `Scroll down`,
       ABOUT_ME_DESCRIPTION:
-        'Hello and welcome! I’m Oleg, a Frontend Developer from Kulmbach, Bavaria. I’m passionate about solving complex problems and taking on new challenges in web development. It’s great to have you here!',
+        'Hello and welcome! I´m Oleg, a frontend developer from Kulmbach, Bavaria. I´m glad you´re here to learn more about my work.',
       PERSONAL_SHARE_1:
-        'I love creating innovative and engaging digital experiences. The ever-changing field of programming keeps me inspired and excited about new possibilities.',
+        'Creativity and innovation are at the center of my work. I love to develop new and engaging digital experiences that excite and inspire users.',
       PERSONAL_SHARE_2:
-        'With a strong attention to detail and a knack for problem-solving, I’m ready to tackle any challenge. Feel free to explore my projects to see what I’ve been working on and how I can help with your next project.',
+        'My special focus is on attention to detail and effective problem solving. I enjoy mastering complex challenges and finding tailor-made solutions.',
       MY_SKILLS: 'My skills',
       SKILLS_DESCRIPTION:
         'I have gained experience in building projects with various front end technologies and concepts.',
@@ -123,11 +123,11 @@ export class DataService {
       LETS_TALK: `Lass uns sprechen!`,
       SCROLL_DOWN: `Runterscrollen`,
       ABOUT_ME_DESCRIPTION:
-        'Hallo und willkommen! Ich bin Oleg, ein Frontend-Entwickler aus Kulmbach, Bayern. Ich bin leidenschaftlich daran interessiert, komplexe Probleme zu lösen und neue Herausforderungen im Web Development anzunehmen. Schön, dass Sie hier sind!',
+        'Hallo und willkommen! Ich bin Oleg, ein Frontend-Entwickler aus Kulmbach, Bayern. Ich freue mich, dass Sie hier sind und mehr über meine Arbeit erfahren möchten.',
       PERSONAL_SHARE_1:
-        'Ich liebe es, innovative und ansprechende digitale Erlebnisse zu schaffen. Das sich ständig weiterentwickelnde Feld der Programmierung inspiriert mich und hält mich für neue Möglichkeiten begeistert.',
+        'Kreativität und Innovation stehen im Mittelpunkt meiner Arbeit. Ich liebe es, neue und ansprechende digitale Erlebnisse zu entwickeln, die Nutzer begeistern und inspirieren.',
       PERSONAL_SHARE_2:
-        'Mit einer ausgeprägten Liebe zum Detail und einem Talent für Problemlösungen bin ich bereit, jede Herausforderung anzugehen. Schauen Sie sich gerne meine Projekte an, um zu sehen, woran ich gearbeitet habe und wie ich Ihnen bei Ihrem nächsten Projekt helfen kann.',
+        'Mein besonderes Augenmerk liegt auf Detailgenauigkeit und effektiver Problemlösung. Ich genieße es, komplexe Herausforderungen zu meistern und passgenaue Lösungen zu finden.',
       MY_SKILLS: 'Meine Fähigkeiten',
       SKILLS_DESCRIPTION:
         'Ich habe Erfahrung im Aufbau von Projekten mit verschiedenen Front-End-Technologien und -Konzepten.',
