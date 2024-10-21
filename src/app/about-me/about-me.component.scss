@@ -44,7 +44,11 @@ h2 {
   flex-direction: column;
   width: 470px;
   height: auto;
-  margin-left: 100px;
+  margin-left: 200px;
+
+  @media (max-width: 1500px) {
+    margin-left: 100px;
+  }
 
   @media (max-width: 650px) {
     margin-left: 25px;
@@ -95,7 +99,11 @@ h2 {
   @include dFlex($jc: flex-end, $ai: center);
 
   @media (min-width: 1920px) {
-    margin-right: 100px;
+    margin-right: 200px;
+  }
+
+  @media (max-width: 1500px) {
+    margin-right: 0px;
   }
 
   @media (max-width: 920px) {
@@ -104,8 +112,12 @@ h2 {
 }
 
 .green-line {
-  width: 100px;
+  width: 200px;
   border: 3px solid $green;
+
+  @media (max-width: 1500px) {
+    width: 100px;
+  }
 
   @media (min-width: 1920px) {
     @include position($t: 50%, $l: 100%);

@@ -47,7 +47,8 @@ export class DataService {
         'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
       POKEDEX_DESCRIPTION:
         'Based on the PokéAPI a simple library that provides and catalogues pokemon information.',
-      CONTACT_SUBHEADLINE: 'Got a problem to solve?',
+        SIMPLE_CRM_DESCRIPTION:'A very Simple Customer Relationship Management system working with CRUD functionality.',
+        CONTACT_SUBHEADLINE: 'Got a problem to solve?',
       CONTACT_DESCRIPTION:
         'Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.',
       CONTACT_PROMPT: 'Need a Frontend developer? <b>Contact me!</b>',
@@ -140,7 +141,8 @@ export class DataService {
         'Spring-, Lauf- und Wurfspiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.',
       POKEDEX_DESCRIPTION:
         'Basierend auf der PokéAPI eine einfache Bibliothek, die Pokemon-Informationen bereitstellt und katalogisiert.',
-      CONTACT_SUBHEADLINE: 'Haben Sie ein Problem zu lösen?',
+        SIMPLE_CRM_DESCRIPTION:'Ein sehr einfaches Customer Relationship Management (CRM) System, das mit CRUD-Funktionalität arbeitet.',
+        CONTACT_SUBHEADLINE: 'Haben Sie ein Problem zu lösen?',
       CONTACT_DESCRIPTION:
         'Kontaktieren Sie mich über dieses Formular, ich bin daran interessiert, von Ihnen zu hören, Ihre Ideen zu kennen und mit meiner Arbeit zu Ihren Projekten beizutragen.',
       CONTACT_PROMPT:
@@ -240,6 +242,15 @@ export class DataService {
       description: 'JOIN_DESCRIPTION',
       liveUrl: 'https://join.oleg-benets.dev/',
       githubUrl: 'https://github.com/OlegBenets/join-dummy',
+    },
+    {
+      name: 'Simple-CRM',
+      img: 'Simple CRM.png',
+      language: ['Angular', 'Firebase'],
+      description: 'SIMPLE_CRM_DESCRIPTION',
+      liveUrl:
+        'https://simple-crm.oleg-benets.dev/',
+      githubUrl: 'https://github.com/OlegBenets/simple-crm',
     },
     {
       name: 'Pollo Loco',
